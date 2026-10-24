@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="月額ホームページ制作のヒアリングシートです。">
+<meta name="robots" content="noindex, nofollow">
+<title>ヒアリングシート（月額ホームページ制作） | TK-creative.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18px;overflow-x:hidden}
+body{font-family:'Inter',"Hiragino Sans","Yu Gothic",system-ui,sans-serif;background:#0c0c0c;color:#fff;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid #75d1cd;outline-offset:3px}
+
+.preview-badge{position:fixed;right:12px;bottom:22px;z-index:200;color:#58b9b5;font-size:.52rem;line-height:1;letter-spacing:.16em;text-transform:uppercase;writing-mode:vertical-rl;pointer-events:none;user-select:none}
+@media(max-width:600px){.preview-badge{display:none}}
+
+/* NAV */
+#tk-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:16px;padding:18px 48px;background:#121414;border-bottom:1px solid rgba(255,255,255,.08);transition:padding .25s}
+#tk-nav.scrolled{padding:12px 48px}
+.nav-logo{display:flex;align-items:center;min-height:48px;line-height:0;margin-right:auto}
+.nav-logo img{display:block;width:96px;height:auto;filter:brightness(0) saturate(100%) invert(72%) sepia(37%) saturate(801%) hue-rotate(3deg) brightness(87%) contrast(85%)}
+.nav-back,.nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;font-size:.62rem;letter-spacing:.12em;padding:0 20px;border-radius:8px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.nav-back{border:1px solid #58b9b5;color:#75d1cd}
+.nav-back:hover{background:rgba(88,185,181,.12);color:#a7e5e2}
+.nav-cta{background:#58b9b5;color:#071716;border:1px solid #58b9b5;font-weight:600}
+.nav-cta:hover{background:#73cbc7;border-color:#73cbc7}
+
+/* COMMON */
+main{padding-top:96px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.section{padding:112px 0;border-top:1px solid rgba(255,255,255,.07)}
+.eyebrow{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:18px}
+.section-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,4.6vw,4.4rem);letter-spacing:-.04em;line-height:1;text-transform:uppercase;margin-bottom:20px}
+.section-lead{font-size:.9rem;color:rgba(255,255,255,.82);max-width:40em;line-height:1.95}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 32px;border-radius:8px;font-size:.72rem;letter-spacing:.12em;font-weight:600;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.btn-primary{background:#58b9b5;color:#071716;border:1px solid #58b9b5}
+.btn-primary:hover{background:#73cbc7;border-color:#73cbc7}
+.btn-ghost{border:1px solid #58b9b5;color:#75d1cd}
+.btn-ghost:hover{background:rgba(88,185,181,.12);color:#a7e5e2}
+
+
+/* FOOTER */
+#tk-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:36px 48px;background:#080909;border-top:1px solid rgba(255,255,255,.09)}
+.footer-logo{line-height:0}
+.footer-logo img{display:block;width:84px;height:auto;filter:brightness(0) saturate(100%) invert(72%) sepia(37%) saturate(801%) hue-rotate(3deg) brightness(87%) contrast(85%)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:8px}
+.footer-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:1px solid #58b9b5;border-radius:8px;color:#75d1cd;font-size:.62rem;letter-spacing:.12em;white-space:nowrap}
+.footer-nav a:hover{background:rgba(88,185,181,.12);color:#a7e5e2}
+.footer-copy{font-size:.64rem;color:rgba(255,255,255,.6);letter-spacing:.06em}
+
+@media(max-width:768px){
+  #tk-nav,#tk-nav.scrolled{padding:10px 12px;gap:6px}
+  .nav-logo img{width:58px}
+  .nav-back,.nav-cta{font-size:.56rem;letter-spacing:.04em;padding:0 12px}
+  .nav-back .long{display:none}
+  main{padding-top:68px}
+  .wrap{padding:0 20px}
+  #tk-footer{flex-direction:column;align-items:flex-start;padding:28px 20px}
+}
+@media(max-width:380px){.nav-cta .long{display:none}}
+
+/* PAGE */
+.page-head{padding:96px 0 56px}
+.page-kicker{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:22px}
+.page-title{font-weight:700;font-size:clamp(1.7rem,4vw,3rem);line-height:1.35;margin-bottom:24px;word-break:keep-all;overflow-wrap:anywhere}
+.page-lead{font-size:.86rem;color:rgba(255,255,255,.84);max-width:40em;line-height:2}
+.steps-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;list-style:none;counter-reset:s}
+.steps-mini li{counter-increment:s;padding:6px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.62rem;color:rgba(255,255,255,.7)}
+.steps-mini li::before{content:counter(s) ". "}
+.steps-mini li[aria-current]{border-color:#58b9b5;background:rgba(88,185,181,.14);color:#a7e5e2}
+/* FORM */
+.fform{max-width:820px;padding-bottom:112px}
+.fsec{border:0;border-top:1px solid rgba(255,255,255,.1);padding:44px 0 12px;margin:0}
+.fsec>legend{float:left;width:100%;padding:0;margin-bottom:8px;font-size:1rem;font-weight:600}
+.fsec>legend span{display:block;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:#75d1cd;font-weight:400;margin-bottom:6px}
+.fsec-note{clear:both;font-size:.7rem;color:rgba(255,255,255,.7);line-height:1.9;margin-bottom:24px}
+.frow{clear:both;margin-bottom:28px}
+.frow>label,.fq{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:.78rem;font-weight:600;margin-bottom:10px}
+.req,.opt{display:inline-block;padding:0 9px;border-radius:999px;font-size:.54rem;font-weight:600;letter-spacing:.06em;line-height:1.9}
+.req{background:#58b9b5;color:#071716}
+.opt{border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.75)}
+.hint{font-size:.64rem;color:rgba(255,255,255,.7);line-height:1.8;margin-top:8px}
+.fform input[type=text],.fform input[type=email],.fform input[type=tel],.fform input[type=url],.fform textarea,.fform select{width:100%;min-height:52px;padding:12px 16px;border:1px solid rgba(255,255,255,.28);border-radius:8px;background:#16181b;color:#fff;font:inherit;font-size:16px}
+.fform textarea{min-height:130px;resize:vertical;line-height:1.8}
+.fform input:focus-visible,.fform textarea:focus-visible,.fform select:focus-visible{outline:2px solid #75d1cd;outline-offset:0;border-color:#75d1cd}
+.fform [aria-invalid=true]{border-color:#ff8a80}
+.choices{display:flex;flex-wrap:wrap;gap:10px;border:0;padding:0;margin:0}
+.choice{position:relative}
+.choice input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.choice span{display:flex;align-items:center;min-height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:.72rem;transition:background .2s,border-color .2s,color .2s}
+.choice input:checked+span{background:#58b9b5;border-color:#58b9b5;color:#071716;font-weight:600}
+.choice input:focus-visible+span{outline:2px solid #75d1cd;outline-offset:3px}
+.agree{display:flex;gap:14px;align-items:flex-start;padding:20px;border:1px solid rgba(88,185,181,.55);border-radius:10px;background:rgba(88,185,181,.06);font-size:.76rem;line-height:1.9;cursor:pointer}
+.agree input{flex:none;width:24px;height:24px;margin-top:2px;accent-color:#58b9b5}
+.agree a{color:#a7e5e2;text-decoration:underline}
+.summary{clear:both;margin:0 0 8px;border-top:1px solid rgba(255,255,255,.1)}
+.summary div{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.76rem}
+.summary dt{font-weight:600}
+.summary dd{margin:0;color:rgba(255,255,255,.86)}
+.fsubmit{margin-top:40px}
+.fstatus{margin-top:20px;font-size:.78rem;line-height:1.9}
+.fstatus:not(:empty){padding:16px 18px;border-radius:8px;background:#16181b;border:1px solid rgba(255,255,255,.14)}
+.fstatus.ok{border-color:#58b9b5}
+.fstatus.err{border-color:#ff8a80}
+.privacy-note{margin-top:28px;font-size:.62rem;color:rgba(255,255,255,.66);line-height:1.9}
+/* LEGAL TEXT */
+.legal{padding-bottom:112px}
+.legal>*{max-width:860px}
+.legal h2{font-size:1rem;font-weight:600;margin:44px 0 14px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1)}
+.legal p,.legal li{font-size:.78rem;color:rgba(255,255,255,.86);line-height:2}
+.legal ol{padding-left:1.5em;margin:8px 0}
+.legal ol ol{list-style:lower-alpha}
+.legal .meta{font-size:.68rem;color:rgba(255,255,255,.68);margin-top:44px}
+.ltable{width:100%;border-collapse:collapse}
+.ltable th,.ltable td{text-align:left;vertical-align:top;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.76rem;line-height:1.9}
+.ltable th{width:30%;font-weight:600;padding-right:24px}
+.ltable td{color:rgba(255,255,255,.86)}
+.ltable tr:first-child th,.ltable tr:first-child td{border-top:1px solid rgba(255,255,255,.1)}
+.todo{display:inline-block;padding:0 8px;border:1px dashed #ffb74d;border-radius:4px;color:#ffcc80}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:768px){
+  .page-head{padding:56px 0 40px}
+  .summary div{grid-template-columns:1fr;gap:4px}
+  .ltable,.ltable tbody,.ltable tr,.ltable th,.ltable td{display:block;width:100%}
+  .ltable th{padding:18px 0 4px;border-bottom:0}
+  .ltable td{padding:0 0 18px}
+  .ltable tr:first-child td{border-top:0}
+  .fsubmit .btn{width:100%}
+}
+
+</style>
+</head>
+<body>
+<nav id="tk-nav">
+  <a class="nav-logo" href="preview.html" aria-label="TK-creative トップページ"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></a>
+  <a class="nav-back" href="web-subscription.html">← 月額<span class="long">ホームページ制作</span></a>
+  <a class="nav-cta" href="contact.html?service=web-subscription"><span class="long">お</span>問い合わせ</a>
+</nav>
+<main>
+<section class="page-head"><div class="wrap">
+  <p class="page-kicker">Hearing Sheet</p>
+  <h1 class="page-title">ヒアリングシート</h1>
+  <p class="page-lead">ホームページの内容とデザインを考えるための質問です。わからないところは空欄や「おまかせ」で構いません。足りない点は、あとからメールでまとめて確認します。<br>目安の所要時間は15〜20分です。</p>
+  <ol class="steps-mini" aria-label="お申し込みまでの流れ"><li>問い合わせ</li><li aria-current="step">ヒアリングシート</li><li>お申し込み</li><li>カード登録</li><li>素材の提出</li><li>制作・確認</li><li>公開</li></ol>
+</div></section><div class="wrap">
+<form class="fform" action="https://formspree.io/f/mjyvbevl" method="POST" novalidate data-flow-form data-done="ヒアリングシートを受け付けました。内容を確認し、2営業日以内にメールでご連絡します（不足点の確認と、お申し込みのご案内をお送りします）。">
+  <input type="hidden" name="_subject" value="【ヒアリングシート】月額ホームページ制作">
+  <input type="hidden" name="_language" value="ja">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <fieldset class="fsec"><legend><span>01 About</span>会社・お店のこと</legend><div class="frow"><label for="f1">会社名・屋号<span class="req">必須</span></label><input id="f1" name="会社名・屋号" type="text" autocomplete="organization" required maxlength="300"></div><div class="frow"><label for="f2">ご担当者のお名前<span class="req">必須</span></label><input id="f2" name="担当者名" type="text" autocomplete="name" required maxlength="300"></div><div class="frow"><label for="f3">メールアドレス<span class="req">必須</span></label><input id="f3" name="email" type="email" autocomplete="email" required maxlength="300" aria-describedby="f3-h"><p class="hint" id="f3-h">お問い合わせのときと同じアドレスをご記入ください。</p></div><div class="frow"><label for="f4">電話番号<span class="opt">任意</span></label><input id="f4" name="電話番号" type="tel" autocomplete="tel" maxlength="300"></div><div class="frow"><label for="f5">業種<span class="req">必須</span></label><input id="f5" name="業種" type="text" autocomplete="off" required maxlength="300" placeholder="例：建設業（外構工事）、デイサービス"></div><div class="frow"><label for="f6">所在地（市区町村まで）<span class="opt">任意</span></label><input id="f6" name="所在地" type="text" autocomplete="off" maxlength="300" aria-describedby="f6-h"><p class="hint" id="f6-h">ホームページに番地まで載せるかどうかは、制作時に確認します。</p></div><div class="frow"><label for="f7">今のホームページのURL<span class="opt">任意</span></label><input id="f7" name="現在のURL" type="url" autocomplete="off" maxlength="300" aria-describedby="f7-h"><p class="hint" id="f7-h">ない場合は空欄で構いません。</p></div></fieldset><fieldset class="fsec"><legend><span>02 Purpose</span>ホームページの目的</legend><fieldset class="frow choices-wrap" style="border:0;padding:0;margin:0 0 28px" data-required-group><legend class="fq">いちばんの目的<span class="req">必須</span></legend><div class="choices"><label class="choice"><input type="checkbox" name="目的" value="問い合わせ・集客を増やす"><span>問い合わせ・集客を増やす</span></label><label class="choice"><input type="checkbox" name="目的" value="人を採用したい"><span>人を採用したい</span></label><label class="choice"><input type="checkbox" name="目的" value="会社の信頼を伝えたい"><span>会社の信頼を伝えたい</span></label><label class="choice"><input type="checkbox" name="目的" value="お店・サービスの案内"><span>お店・サービスの案内</span></label><label class="choice"><input type="checkbox" name="目的" value="その他"><span>その他</span></label></div><p class="hint" id="f8-h">複数選べます。</p></fieldset><div class="frow"><label for="f9">見てほしい相手<span class="opt">任意</span></label><textarea id="f9" name="見てほしい相手" maxlength="3000" aria-describedby="f9-h"></textarea><p class="hint" id="f9-h">例：新築を考えている30〜40代の家族、地元の高校生と保護者</p></div><div class="frow"><label for="f10">強み・ほかとの違い<span class="opt">任意</span></label><textarea id="f10" name="強み" maxlength="3000" aria-describedby="f10-h"></textarea><p class="hint" id="f10-h">お客様からよく言われること、こだわっていることなど。箇条書きで構いません。</p></div></fieldset><fieldset class="fsec"><legend><span>03 Pages</span>載せたい内容</legend><fieldset class="frow choices-wrap" style="border:0;padding:0;margin:0 0 28px"><legend class="fq">作りたいページ<span class="opt">任意</span></legend><div class="choices"><label class="choice"><input type="checkbox" name="ページ" value="会社・お店の紹介"><span>会社・お店の紹介</span></label><label class="choice"><input type="checkbox" name="ページ" value="サービス・商品"><span>サービス・商品</span></label><label class="choice"><input type="checkbox" name="ページ" value="料金"><span>料金</span></label><label class="choice"><input type="checkbox" name="ページ" value="実績・施工例"><span>実績・施工例</span></label><label class="choice"><input type="checkbox" name="ページ" value="採用"><span>採用</span></label><label class="choice"><input type="checkbox" name="ページ" value="よくある質問"><span>よくある質問</span></label><label class="choice"><input type="checkbox" name="ページ" value="アクセス"><span>アクセス</span></label><label class="choice"><input type="checkbox" name="ページ" value="お問い合わせ"><span>お問い合わせ</span></label><label class="choice"><input type="checkbox" name="ページ" value="おまかせ"><span>おまかせ</span></label></div><p class="hint" id="f11-h">トップページを含めて最大5ページです（プライバシーポリシーは別に作ります）。多い場合はご相談します。</p></fieldset><div class="frow"><label for="f12">必ず載せたいこと<span class="opt">任意</span></label><textarea id="f12" name="必ず載せたいこと" maxlength="3000" aria-describedby="f12-h"></textarea><p class="hint" id="f12-h">営業時間、対応エリア、資格・許可、メニューなど。</p></div></fieldset><fieldset class="fsec"><legend><span>04 Design</span>デザインの希望</legend><fieldset class="frow choices-wrap" style="border:0;padding:0;margin:0 0 28px"><legend class="fq">雰囲気<span class="opt">任意</span></legend><div class="choices"><label class="choice"><input type="checkbox" name="雰囲気" value="信頼感・誠実"><span>信頼感・誠実</span></label><label class="choice"><input type="checkbox" name="雰囲気" value="温かい・やさしい"><span>温かい・やさしい</span></label><label class="choice"><input type="checkbox" name="雰囲気" value="力強い・元気"><span>力強い・元気</span></label><label class="choice"><input type="checkbox" name="雰囲気" value="高級感・落ち着き"><span>高級感・落ち着き</span></label><label class="choice"><input type="checkbox" name="雰囲気" value="シンプル"><span>シンプル</span></label><label class="choice"><input type="checkbox" name="雰囲気" value="おまかせ"><span>おまかせ</span></label></div></fieldset><div class="frow"><label for="f14">使いたい色・避けたい色<span class="opt">任意</span></label><input id="f14" name="色の希望" type="text" autocomplete="off" maxlength="300" placeholder="例：ロゴの紺色を使いたい／赤は避けたい"></div><div class="frow"><label for="f15">参考にしたいホームページ<span class="opt">任意</span></label><textarea id="f15" name="参考サイト" maxlength="3000" aria-describedby="f15-h"></textarea><p class="hint" id="f15-h">URLと、どこが好きかを書いてください（同業でなくても構いません）。</p></div><div class="frow"><label for="f16">理念・大切にしていること<span class="opt">任意</span></label><textarea id="f16" name="理念" maxlength="3000" aria-describedby="f16-h"></textarea><p class="hint" id="f16-h">デザインや文章の方向を決めるときに参考にします。</p></div><div class="frow"><label for="f17">避けたい表現<span class="opt">任意</span></label><textarea id="f17" name="避けたい表現" maxlength="3000" aria-describedby="f17-h"></textarea><p class="hint" id="f17-h">例：派手すぎる動き、かわいすぎる絵柄</p></div></fieldset><fieldset class="fsec"><legend><span>05 Materials</span>素材について</legend><p class="fsec-note">素材は、お申し込みのあとにGoogleドライブの共有フォルダへ入れていただきます。この時点で送る必要はありません。ロゴ制作・撮影は別料金です。</p><fieldset class="frow choices-wrap" style="border:0;padding:0;margin:0 0 28px"><legend class="fq">ロゴ<span class="opt">任意</span></legend><div class="choices"><label class="choice"><input type="radio" name="ロゴ" value="データがある"><span>データがある</span></label><label class="choice"><input type="radio" name="ロゴ" value="画像だけある"><span>画像だけある</span></label><label class="choice"><input type="radio" name="ロゴ" value="ない"><span>ない</span></label></div></fieldset><fieldset class="frow choices-wrap" style="border:0;padding:0;margin:0 0 28px"><legend class="fq">写真<span class="opt">任意</span></legend><div class="choices"><label class="choice"><input type="radio" name="写真" value="たくさんある"><span>たくさんある</span></label><label class="choice"><input type="radio" name="写真" value="少しある"><span>少しある</span></label><label class="choice"><input type="radio" name="写真" value="ない"><span>ない</span></label></div></fieldset><fieldset class="frow choices-wrap" style="border:0;padding:0;margin:0 0 28px"><legend class="fq">会社案内・チラシなどの資料<span class="opt">任意</span></legend><div class="choices"><label class="choice"><input type="radio" name="資料" value="ある"><span>ある</span></label><label class="choice"><input type="radio" name="資料" value="ない"><span>ない</span></label></div></fieldset></fieldset><fieldset class="fsec"><legend><span>06 Setup</span>公開に向けて</legend><div class="frow"><label for="f21">問い合わせの通知を受け取るメールアドレス<span class="opt">任意</span></label><input id="f21" name="通知先メール" type="email" autocomplete="off" maxlength="300" aria-describedby="f21-h"><p class="hint" id="f21-h">ホームページのお問い合わせフォームから届くお知らせの宛先です。</p></div><fieldset class="frow choices-wrap" style="border:0;padding:0;margin:0 0 28px"><legend class="fq">ドメイン（〇〇.com など）<span class="opt">任意</span></legend><div class="choices"><label class="choice"><input type="radio" name="ドメイン" value="持っている"><span>持っている</span></label><label class="choice"><input type="radio" name="ドメイン" value="新しく取りたい"><span>新しく取りたい</span></label><label class="choice"><input type="radio" name="ドメイン" value="わからない"><span>わからない</span></label></div></fieldset><div class="frow"><label for="f23">使いたいドメイン名・今のドメイン<span class="opt">任意</span></label><input id="f23" name="ドメイン名" type="text" autocomplete="off" maxlength="300" placeholder="例：example.com"></div><div class="frow"><label for="f24">公開の希望時期<span class="opt">任意</span></label><input id="f24" name="公開希望時期" type="text" autocomplete="off" maxlength="300" placeholder="例：12月中、特になし"></div><div class="frow"><label for="f25">そのほかのご要望・ご質問<span class="opt">任意</span></label><textarea id="f25" name="その他" maxlength="3000"></textarea></div></fieldset>
+  <div class="fsubmit"><button class="btn btn-primary" type="submit">ヒアリングシートを送信する</button></div>
+  <p class="fstatus" role="status" aria-live="polite" tabindex="-1" data-status></p>
+  <p class="privacy-note">送信内容はフォーム送信サービス（Formspree）を経由してTK-creative.に届きます。いただいた情報は、ホームページ制作のご案内・制作・契約のご連絡のためだけに使用します。</p>
+</form></div>
+</main>
+<footer id="tk-footer">
+  <div class="footer-logo"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></div>
+  <nav class="footer-nav"><a href="web-subscription.html">月額ホームページ制作</a><a href="web-terms.html">利用規約</a><a href="tokushoho.html">特定商取引法に基づく表記</a><a href="contact.html">お問い合わせ</a></nav>
+  <p class="footer-copy">&copy; 2026 TK-creative. All rights reserved.</p>
+</footer>
+<script>
+(function(){var nav=document.getElementById('tk-nav');window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true})})();
+
+(function(){
+  var form=document.querySelector('form[data-flow-form]');if(!form)return;
+  var btn=form.querySelector('[type=submit]'),st=form.querySelector('[data-status]'),label=btn.textContent;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    form.querySelectorAll('[aria-invalid]').forEach(function(el){el.removeAttribute('aria-invalid')});
+    var bad=null;
+    form.querySelectorAll('input[required]:not([type=radio]):not([type=checkbox]),textarea[required]').forEach(function(el){if(!bad&&!el.checkValidity())bad=el});
+    if(!bad){form.querySelectorAll('[data-required-group]').forEach(function(g){if(!bad&&!g.querySelector('input:checked'))bad=g.querySelector('input')})}
+    if(!bad){var ag=form.querySelector('input[data-agree]');if(ag&&!ag.checked)bad=ag}
+    if(bad){bad.setAttribute('aria-invalid','true');var lb=bad.closest('.frow,.agree');var name=lb?(lb.querySelector('label,legend')||lb).textContent.replace(/必須|任意/g,'').trim():'入力内容';st.className='fstatus err';st.textContent='「'+name.slice(0,40)+'」を確認してください。';st.focus();return}
+    var fd=new FormData(form);var multi={};
+    form.querySelectorAll('input[type=checkbox]:not([data-agree])').forEach(function(c){if(c.checked){(multi[c.name]=multi[c.name]||[]).push(c.value)}});
+    Object.keys(multi).forEach(function(k){fd.delete(k);fd.append(k,multi[k].join('、'))});
+    btn.disabled=true;btn.textContent='送信中…';st.className='fstatus';st.textContent='';
+    fetch(form.action,{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
+      if(!r.ok)throw new Error();
+      form.querySelectorAll('fieldset.fsec,.fsubmit button').forEach(function(el){el.hidden=true});
+      st.className='fstatus ok';st.textContent=form.getAttribute('data-done');st.focus();window.scrollTo({top:form.getBoundingClientRect().top+scrollY-120});
+    }).catch(function(){
+      btn.disabled=false;btn.textContent=label;st.className='fstatus err';st.textContent='送信できませんでした。時間をおいて再度お試しいただくか、contact@tk-creative.org へメールでお送りください。入力内容はこの画面に残っています。';st.focus();
+    });
+  });
+})();
+
+</script>
+</body>
+</html>

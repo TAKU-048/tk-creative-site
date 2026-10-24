@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="初期制作費0円、月額9,600円（税別）のホームページ制作・管理サービス。最大5ページの制作、ドメイン・サーバー・SSL・更新対応・保守を月額にまとめてご提供します。">
+<title>ホームページ制作・月額管理サービス | TK-creative.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18px;overflow-x:hidden}
+body{font-family:'Inter',"Hiragino Sans","Yu Gothic",system-ui,sans-serif;background:#0c0c0c;color:#fff;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid #75d1cd;outline-offset:3px}
+
+.preview-badge{position:fixed;right:12px;bottom:22px;z-index:200;color:#58b9b5;font-size:.52rem;line-height:1;letter-spacing:.16em;text-transform:uppercase;writing-mode:vertical-rl;pointer-events:none;user-select:none}
+@media(max-width:600px){.preview-badge{display:none}}
+
+/* NAV */
+#tk-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:16px;padding:18px 48px;background:#121414;border-bottom:1px solid rgba(255,255,255,.08);transition:padding .25s}
+#tk-nav.scrolled{padding:12px 48px}
+.nav-logo{display:flex;align-items:center;min-height:48px;line-height:0;margin-right:auto}
+.nav-logo img{display:block;width:96px;height:auto;filter:brightness(0) saturate(100%) invert(72%) sepia(37%) saturate(801%) hue-rotate(3deg) brightness(87%) contrast(85%)}
+.nav-back,.nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;font-size:.62rem;letter-spacing:.12em;padding:0 20px;border-radius:8px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.nav-back{border:1px solid #58b9b5;color:#75d1cd}
+.nav-back:hover{background:rgba(88,185,181,.12);color:#a7e5e2}
+.nav-cta{background:#58b9b5;color:#071716;border:1px solid #58b9b5;font-weight:600}
+.nav-cta:hover{background:#73cbc7;border-color:#73cbc7}
+
+/* COMMON */
+main{padding-top:96px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+.section{padding:112px 0;border-top:1px solid rgba(255,255,255,.07)}
+.eyebrow{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:18px}
+.section-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,4.6vw,4.4rem);letter-spacing:-.04em;line-height:1;text-transform:uppercase;margin-bottom:20px}
+.section-lead{font-size:.9rem;color:rgba(255,255,255,.82);max-width:40em;line-height:1.95}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 32px;border-radius:8px;font-size:.72rem;letter-spacing:.12em;font-weight:600;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.btn-primary{background:#58b9b5;color:#071716;border:1px solid #58b9b5}
+.btn-primary:hover{background:#73cbc7;border-color:#73cbc7}
+.btn-ghost{border:1px solid #58b9b5;color:#75d1cd}
+.btn-ghost:hover{background:rgba(88,185,181,.12);color:#a7e5e2}
+
+/* HERO */
+#hero{padding:120px 0 104px;position:relative;overflow:hidden}
+.hero-kicker{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:28px}
+.hero-title{font-weight:700;font-size:clamp(2rem,5.2vw,4.4rem);line-height:1.25;letter-spacing:-.01em;margin-bottom:36px;word-break:keep-all;overflow-wrap:anywhere}
+.hero-title .muted{color:rgba(255,255,255,.62)}
+.hero-title .ln{display:inline-block}
+.hero-desc{font-size:.92rem;color:rgba(255,255,255,.84);max-width:34em;line-height:2;margin-bottom:48px}
+.hero-price{display:flex;flex-wrap:wrap;align-items:stretch;gap:2px;margin-bottom:48px;background:rgba(255,255,255,.12);max-width:760px}
+.hero-price>div{flex:1 1 220px;background:#16181b;padding:26px 28px}
+.hp-label{font-size:.6rem;letter-spacing:.2em;color:rgba(255,255,255,.66);margin-bottom:8px}
+.hp-value{font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1.2}
+.hp-value small{font-size:.62rem;font-weight:400;color:rgba(255,255,255,.7);letter-spacing:.06em;margin-left:6px}
+.hp-note{font-size:.62rem;color:rgba(255,255,255,.66);margin-top:6px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-mark{position:absolute;right:-2vw;top:60px;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(6rem,18vw,16rem);letter-spacing:-.06em;color:rgba(255,255,255,.035);line-height:.8;pointer-events:none;user-select:none}
+
+/* INCLUDED */
+.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.1);margin-top:56px}
+.inc{background:#0c0c0c;padding:32px 28px 36px}
+.inc-h{font-size:.95rem;font-weight:600;margin-bottom:10px;line-height:1.5}
+.inc-p{font-size:.76rem;color:rgba(255,255,255,.76);line-height:1.85}
+
+/* APPROACH */
+.approach{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.approach-list{list-style:none;border-top:1px solid rgba(255,255,255,.1)}
+.approach-list li{padding:26px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.al-h{font-size:.92rem;font-weight:600;margin-bottom:6px}
+.al-p{font-size:.78rem;color:rgba(255,255,255,.76);line-height:1.9}
+
+/* FLOW */
+.flow{list-style:none;counter-reset:f;margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px 48px}
+.flow li{counter-increment:f;border-top:1px solid rgba(88,185,181,.55);padding-top:20px}
+.flow li::before{content:counter(f,decimal-leading-zero);display:block;font-size:.62rem;letter-spacing:.2em;color:#75d1cd;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.fl-h{font-size:.9rem;font-weight:600;margin-bottom:6px}
+.fl-p{font-size:.76rem;color:rgba(255,255,255,.76);line-height:1.85}
+.flow-note{margin-top:48px;font-size:.72rem;color:rgba(255,255,255,.7);line-height:1.9;max-width:52em}
+
+/* PRICE TABLE */
+.ptable{width:100%;border-collapse:collapse;margin-top:48px}
+.ptable th,.ptable td{text-align:left;vertical-align:top;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.8rem;line-height:1.8}
+.ptable th{width:34%;font-weight:600;padding-right:32px}
+.ptable td{color:rgba(255,255,255,.84)}
+.ptable .num{font-variant-numeric:tabular-nums;font-weight:600;color:#fff}
+.ptable tr:first-child th,.ptable tr:first-child td{border-top:1px solid rgba(255,255,255,.1)}
+.pnote{margin-top:24px;font-size:.68rem;color:rgba(255,255,255,.68);line-height:1.9}
+
+/* FAQ */
+.faq{margin-top:48px;border-top:1px solid rgba(255,255,255,.1)}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.1)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px;padding:18px 0;background:none;border:0;text-align:left;font-size:.86rem;font-weight:600;cursor:pointer;line-height:1.6}
+.faq-icon{flex:none;width:32px;height:32px;border:1px solid #58b9b5;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#75d1cd;font-size:.9rem;transition:transform .2s}
+.faq-q[aria-expanded="true"] .faq-icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 56px 24px 0;font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.95}
+.faq-q[aria-expanded="true"]+.faq-a{display:block}
+
+/* SAMPLES（制作デモ） */
+.demo-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.demo-filters button{min-height:48px;padding:0 22px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:transparent;font-size:.7rem;letter-spacing:.08em;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.demo-filters button:hover{border-color:#75d1cd;color:#a7e5e2}
+.demo-filters button[aria-pressed="true"]{background:#58b9b5;border-color:#58b9b5;color:#071716;font-weight:600}
+.demo-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px;margin-top:40px}
+.demo-grid li[hidden]{display:none}
+.demo-card{display:block;color:#fff}
+.demo-shot{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:10px;background:#16181b;border:1px solid rgba(255,255,255,.1)}
+.demo-shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,.8,.3,1)}
+.demo-card:hover .demo-shot img{transform:scale(1.04)}
+.demo-open{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:#0c0c0c;color:#fff;font-size:.6rem;letter-spacing:.08em;opacity:.92}
+.demo-tag{display:inline-block;margin-top:18px;padding:2px 12px;border:1px solid #58b9b5;border-radius:999px;color:#75d1cd;font-size:.6rem;letter-spacing:.1em}
+.demo-name{display:block;margin-top:10px;font-size:.92rem;font-weight:600;line-height:1.5}
+.demo-point{display:block;margin-top:6px;font-size:.72rem;color:rgba(255,255,255,.76);line-height:1.85}
+.demo-note{margin-top:40px;font-size:.66rem;color:rgba(255,255,255,.66);line-height:1.9}
+@media(max-width:900px){.demo-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.demo-grid{grid-template-columns:1fr}.demo-filters button{padding:0 16px}}
+
+/* FINAL */
+.final{padding:128px 0;border-top:1px solid rgba(255,255,255,.07);text-align:center}
+.final-h{font-weight:700;font-size:clamp(1.6rem,3.6vw,3rem);line-height:1.4;margin-bottom:24px;word-break:keep-all;overflow-wrap:anywhere}
+.final-p{font-size:.82rem;color:rgba(255,255,255,.78);margin:0 auto 40px;max-width:34em;line-height:1.95}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.demo-name small{font-size:.66rem;font-weight:400;color:rgba(255,255,255,.66);margin-left:4px}
+.final-mail{display:inline-flex;align-items:center;min-height:48px;margin-top:14px;font-size:.68rem;color:rgba(255,255,255,.66);letter-spacing:.06em}
+
+/* FOOTER */
+#tk-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:36px 48px;background:#080909;border-top:1px solid rgba(255,255,255,.09)}
+.footer-logo{line-height:0}
+.footer-logo img{display:block;width:84px;height:auto;filter:brightness(0) saturate(100%) invert(72%) sepia(37%) saturate(801%) hue-rotate(3deg) brightness(87%) contrast(85%)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:8px}
+.footer-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:1px solid #58b9b5;border-radius:8px;color:#75d1cd;font-size:.62rem;letter-spacing:.12em;white-space:nowrap}
+.footer-nav a:hover{background:rgba(88,185,181,.12);color:#a7e5e2}
+.footer-copy{font-size:.64rem;color:rgba(255,255,255,.6);letter-spacing:.06em}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,.8,.3,1),transform .7s cubic-bezier(.22,.8,.3,1)}
+.reveal.revealed{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+
+/* LIGHT THEME（2026-10-23 白ベースに変更） */
+body{background:#ffffff;color:#16191c}
+:focus-visible{outline-color:#1f7d79}
+.preview-badge{color:#1f7d79}
+#tk-nav{background:rgba(255,255,255,.96);border-bottom:1px solid #e6e9ea;backdrop-filter:blur(8px)}
+.nav-logo img{filter:brightness(0) saturate(100%) invert(52%) sepia(68%) saturate(560%) hue-rotate(10deg) brightness(88%) contrast(95%)}
+.nav-back,.btn-ghost,.footer-nav a{border-color:#58b9b5;color:#1f7d79}
+.nav-back:hover,.btn-ghost:hover,.footer-nav a:hover{background:#e6f5f4;color:#155e5b}
+.section,.final{border-top-color:#eceeef}
+.section:nth-of-type(even){background:#f6f8f8}
+.eyebrow,.hero-kicker{color:#1f7d79}
+.section-lead,.hero-desc{color:#424a51}
+.hero-title .muted{color:#7b858c}
+.hero-price{background:#dfe5e6}
+.hero-price>div{background:#f4f8f8}
+.hp-label,.hp-note,.hp-value small{color:#59636a}
+.hero-mark{color:rgba(22,25,28,.04)}
+.inc-grid{background:#e3e8e9}
+.inc{background:#ffffff}
+.inc-p,.al-p,.fl-p{color:#4d565d}
+.approach-list,.approach-list li{border-color:#e3e8e9}
+.flow li{border-top-color:#58b9b5}
+.flow li::before{color:#1f7d79}
+.flow-note,.pnote,.demo-note{color:#5a646b}
+.ptable th,.ptable td,.ptable tr:first-child th,.ptable tr:first-child td{border-color:#e3e8e9}
+.ptable td{color:#3a4248}
+.ptable .num{color:#16191c}
+.faq,.faq-item{border-color:#e3e8e9}
+.faq-icon{color:#1f7d79}
+.faq-a{color:#424a51}
+.demo-filters button{border-color:#c9d1d3;color:#2b3237}
+.demo-filters button:hover{border-color:#58b9b5;color:#1f7d79}
+.demo-card{color:#16191c}
+.demo-shot{background:#eef2f2;border-color:#e3e8e9;box-shadow:0 10px 24px rgba(22,25,28,.08)}
+.demo-open{background:#16191c;color:#fff}
+.demo-tag{color:#1f7d79}
+.demo-point,.demo-name small{color:#4d565d}
+.final{background:#f2f8f8}
+.final-p{color:#424a51}
+.final-mail{color:#59636a}
+#tk-footer{background:#f6f8f8;border-top-color:#e3e8e9}
+.footer-copy{color:#59636a}
+
+/* MOBILE */
+@media(max-width:900px){
+  .inc-grid{grid-template-columns:repeat(2,1fr)}
+  .approach{grid-template-columns:1fr;gap:40px}
+  .flow{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  #tk-nav,#tk-nav.scrolled{padding:10px 12px;gap:6px}
+  .nav-logo img{width:58px}
+  .nav-back,.nav-cta{font-size:.56rem;letter-spacing:.04em;padding:0 12px}
+  .nav-back .long{display:none}
+  main{padding-top:68px}
+  .wrap{padding:0 20px}
+  #hero{padding:64px 0 72px}
+  .hero-title{font-size:clamp(1.4rem,6.6vw,2.4rem);margin-bottom:24px}
+  .hero-desc{font-size:.8rem;margin-bottom:32px}
+  .hero-price>div{padding:20px}
+  .hero-actions .btn{width:100%}
+  .section{padding:72px 0}
+  .section-h{font-size:clamp(1.8rem,9vw,2.8rem)}
+  .section-lead{font-size:.8rem}
+  .inc-grid{grid-template-columns:1fr;margin-top:36px}
+  .inc{padding:24px 20px 28px}
+  .flow{grid-template-columns:1fr;gap:28px;margin-top:36px}
+  .ptable,.ptable tbody,.ptable tr,.ptable th,.ptable td{display:block;width:100%}
+  .ptable th{padding:20px 0 4px;border-bottom:0}
+  .ptable td{padding:0 0 20px}
+  .ptable tr:first-child td{border-top:0}
+  .faq-q{font-size:.8rem}
+  .faq-a{padding-right:0;font-size:.74rem}
+  .final{padding:80px 0}
+  .final .btn{width:100%}
+  #tk-footer{flex-direction:column;align-items:flex-start;padding:28px 20px}
+}
+@media(max-width:380px){
+  .nav-cta .long{display:none}
+}
+</style>
+</head>
+<body>
+<div class="preview-badge">Preview</div>
+
+<nav id="tk-nav">
+  <a class="nav-logo" href="preview.html" aria-label="TK-creative トップページ"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></a>
+  <a class="nav-back" href="preview.html">← トップ<span class="long">に戻る</span></a>
+  <a class="nav-cta" href="contact.html?service=web-subscription"><span class="long">制作を</span>相談する</a>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section id="hero">
+    <span class="hero-mark" aria-hidden="true">WEB</span>
+    <div class="wrap">
+      <p class="hero-kicker reveal">Website Subscription</p>
+      <h1 class="hero-title reveal"><span class="ln">ホームページを、</span><br><span class="ln">つくって終わりにしない。</span><br><span class="muted"><span class="ln">制作から管理まで、</span><span class="ln">月額で。</span></span></h1>
+      <p class="hero-desc reveal">初期制作費は0円。会社やお店の情報・素材をもとにオリジナルのホームページを制作し、公開後のサーバー・ドメイン・更新対応・保守までまとめて引き受けます。お打ち合わせはオンラインで完結します。</p>
+      <div class="hero-price reveal">
+        <div>
+          <p class="hp-label">初期制作費</p>
+          <p class="hp-value">0円</p>
+        </div>
+        <div>
+          <p class="hp-label">月額</p>
+          <p class="hp-value">9,600円<small>税別</small></p>
+          <p class="hp-note">税込 10,560円 ／ 最低利用期間12か月</p>
+        </div>
+      </div>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="contact.html?service=web-subscription">制作について相談する</a>
+        <a class="btn btn-ghost" href="#samples">制作例を見る</a>
+        <a class="btn btn-ghost" href="#price">料金と条件を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLES -->
+  <section class="section" id="samples">
+    <div class="wrap">
+      <p class="eyebrow reveal">Samples</p>
+      <h2 class="section-h reveal">Samples</h2>
+      <p class="section-lead reveal">業種ごとに作った制作例です。実際に動くサイトなので、スマートフォンでもそのままご覧いただけます。</p>
+      <div class="demo-filters reveal" role="group" aria-label="業種で絞り込む" data-demo-filters hidden>
+        <button type="button" aria-pressed="true" data-filter="all">すべて</button>
+        <button type="button" aria-pressed="false" data-filter="construction">建設</button>
+        <button type="button" aria-pressed="false" data-filter="logistics">運送・物流</button>
+        <button type="button" aria-pressed="false" data-filter="care">介護・福祉</button>
+        <button type="button" aria-pressed="false" data-filter="food">飲食</button>
+        <button type="button" aria-pressed="false" data-filter="beauty">美容</button>
+      </div>
+      <p class="sr-only" role="status" aria-live="polite" data-demo-status></p>
+      <ul class="demo-grid">
+        <li data-industry="construction" class="reveal"><a class="demo-card" href="https://demo-build-recruit.tk-sites.workers.dev/" target="_blank" rel="noopener"><span class="demo-shot"><img src="images/demos/demo-build-recruit-480.webp" srcset="images/demos/demo-build-recruit-480.webp 480w, images/demos/demo-build-recruit.webp 960w" sizes="(max-width:600px) 90vw, (max-width:900px) 45vw, 360px" alt="株式会社ミナモト建設（デモ）のトップページ" width="960" height="600" loading="lazy"><span class="demo-open">サイトを見る<span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開きます）</span></span></span><span class="demo-tag">建設</span><span class="demo-name">株式会社ミナモト建設<small>（架空）</small></span><span class="demo-point">採用向け。青焼き図面の背景、仮囲いが外れて写真が現れる演出、入社後の育ち方の線。</span></a></li>
+        <li data-industry="construction" class="reveal"><a class="demo-card" href="https://demo-build-works.tk-sites.workers.dev/" target="_blank" rel="noopener"><span class="demo-shot"><img src="images/demos/demo-build-works-480.webp" srcset="images/demos/demo-build-works-480.webp 480w, images/demos/demo-build-works.webp 960w" sizes="(max-width:600px) 90vw, (max-width:900px) 45vw, 360px" alt="杣建築工房（デモ）のトップページ" width="960" height="600" loading="lazy"><span class="demo-open">サイトを見る<span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開きます）</span></span></span><span class="demo-tag">建設</span><span class="demo-name">杣建築工房<small>（架空）</small></span><span class="demo-point">施工例向け。縦書きの見出し、障子が開いて写真が現れる演出、施工例の拡大表示。</span></a></li>
+        <li data-industry="logistics" class="reveal"><a class="demo-card" href="https://demo-logistics.tk-sites.workers.dev/" target="_blank" rel="noopener"><span class="demo-shot"><img src="images/demos/demo-logistics-480.webp" srcset="images/demos/demo-logistics-480.webp 480w, images/demos/demo-logistics.webp 960w" sizes="(max-width:600px) 90vw, (max-width:900px) 45vw, 360px" alt="株式会社朝凪運輸（デモ）のトップページ" width="960" height="600" loading="lazy"><span class="demo-open">サイトを見る<span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開きます）</span></span></span><span class="demo-tag">運送・物流</span><span class="demo-name">株式会社朝凪運輸<small>（架空）</small></span><span class="demo-point">見積もり・採用向け。夜の道路の光、走る地域のルート図、荷物の量から選ぶ車の大きさ。</span></a></li>
+        <li data-industry="care" class="reveal"><a class="demo-card" href="https://demo-care-day.tk-sites.workers.dev/" target="_blank" rel="noopener"><span class="demo-shot"><img src="images/demos/demo-care-day-480.webp" srcset="images/demos/demo-care-day-480.webp 480w, images/demos/demo-care-day.webp 960w" sizes="(max-width:600px) 90vw, (max-width:900px) 45vw, 360px" alt="デイサービス こもれび舎（デモ）のトップページ" width="960" height="600" loading="lazy"><span class="demo-open">サイトを見る<span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開きます）</span></span></span><span class="demo-tag">介護・福祉</span><span class="demo-name">デイサービス こもれび舎<small>（架空）</small></span><span class="demo-point">ご家族向け。木漏れ日の背景、太陽が1日をたどる過ごし方、文字を大きくするボタン。</span></a></li>
+        <li data-industry="food" class="reveal"><a class="demo-card" href="https://demo-food-ramen.tk-sites.workers.dev/" target="_blank" rel="noopener"><span class="demo-shot"><img src="images/demos/demo-food-ramen-480.webp" srcset="images/demos/demo-food-ramen-480.webp 480w, images/demos/demo-food-ramen.webp 960w" sizes="(max-width:600px) 90vw, (max-width:900px) 45vw, 360px" alt="中華そば 灯（デモ）のトップページ" width="960" height="600" loading="lazy"><span class="demo-open">サイトを見る<span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開きます）</span></span></span><span class="demo-tag">飲食</span><span class="demo-name">中華そば 灯<small>（架空）</small></span><span class="demo-point">暖簾が分かれて一杯が見える入口、湯気と提灯、営業中かどうかの自動表示。</span></a></li>
+        <li data-industry="beauty" class="reveal"><a class="demo-card" href="https://demo-beauty-salon.tk-sites.workers.dev/" target="_blank" rel="noopener"><span class="demo-shot"><img src="images/demos/demo-beauty-salon-480.webp" srcset="images/demos/demo-beauty-salon-480.webp 480w, images/demos/demo-beauty-salon.webp 960w" sizes="(max-width:600px) 90vw, (max-width:900px) 45vw, 360px" alt="hair studio Lune（デモ）のトップページ" width="960" height="600" loading="lazy"><span class="demo-open">サイトを見る<span aria-hidden="true">↗</span><span class="sr-only">（新しいタブで開きます）</span></span></span><span class="demo-tag">美容</span><span class="demo-name">hair studio Lune<small>（架空）</small></span><span class="demo-point">アーチ型の鏡の写真枠、スタイルの横スクロールと絞り込み、点線の料金表。</span></a></li>
+      </ul>
+      <p class="demo-note reveal">掲載しているのは、制作の見本として作った架空の会社・お店のサイトです。写真は商用利用できる素材サイト（Unsplash）のもので、実在の会社・お店・実績とは関係ありません。実際の制作では、お客様の情報と写真で一からつくります。</p>
+    </div>
+  </section>
+
+  <!-- INCLUDED -->
+  <section class="section" id="included">
+    <div class="wrap">
+      <p class="eyebrow reveal">What's Included</p>
+      <h2 class="section-h reveal">Included</h2>
+      <p class="section-lead reveal">月額料金に含まれる内容です。別料金になるものは「料金と条件」に記載しています。</p>
+      <div class="inc-grid">
+        <div class="inc reveal"><p class="inc-h">最大5ページの制作</p><p class="inc-p">トップページを含む最大5ページと、プライバシーポリシー1ページを制作します。スマートフォン表示にも対応します。</p></div>
+        <div class="inc reveal"><p class="inc-h">独自ドメイン（.com）</p><p class="inc-p">通常価格の.comドメイン1件の取得代行・取得費・更新費を含みます。名義はお客様が基本です。既存のドメインも利用できます。</p></div>
+        <div class="inc reveal"><p class="inc-h">サーバー・SSL</p><p class="inc-p">ホスティングとSSL（https）の管理を行います。</p></div>
+        <div class="inc reveal"><p class="inc-h">月1回の軽微な更新</p><p class="inc-p">文章・写真・営業時間・連絡先などの変更を、月1回まとめて合計30分以内で対応します。翌月への繰り越しはありません。</p></div>
+        <div class="inc reveal"><p class="inc-h">問い合わせフォーム</p><p class="inc-p">フォーム1つ（入力項目10項目まで）を設置し、お客様の既存メールアドレス宛てに通知します。月1回の動作確認を行います。</p></div>
+        <div class="inc reveal"><p class="inc-h">保守・バックアップ</p><p class="inc-p">稼働監視、更新前のバックアップ、基本的なアクセス解析の設置を含みます。制作側の不具合は更新枠を使わずに修正します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section" id="approach">
+    <div class="wrap approach">
+      <div>
+        <p class="eyebrow reveal">Approach</p>
+        <h2 class="section-h reveal">Original</h2>
+        <p class="section-lead reveal">決まったひな形に文字と写真を入れ替えるだけの制作はしません。</p>
+      </div>
+      <ul class="approach-list">
+        <li class="reveal"><p class="al-h">会社ごとに、目的から設計する</p><p class="al-p">採用、集客、信頼づくりなど、そのホームページで何を伝えたいかを先に整理し、構成・文章・デザインを決めます。</p></li>
+        <li class="reveal"><p class="al-h">ご提供いただいた情報で組み立てる</p><p class="al-p">会社情報・サービス内容・実績などの事実はお客様から受領し、事実確認をお願いします。写真はお客様の素材を優先し、不足分は商用利用できる素材から選びます。</p></li>
+        <li class="reveal"><p class="al-h">デザインの希望も伺う</p><p class="al-p">色・フォント・雰囲気・理念・こだわりを伺います。具体的な指定が難しい場合は「おまかせ」でも構いません。参考サイトや好きな表現から提案します。</p></li>
+        <li class="reveal"><p class="al-h">映像の制作者がつくる</p><p class="al-p">ドローン空撮や映像制作も行っているため、撮影から公開まで同じ担当者で相談できます（撮影は別料金）。</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="section" id="flow">
+    <div class="wrap">
+      <p class="eyebrow reveal">Flow</p>
+      <h2 class="section-h reveal">Flow</h2>
+      <p class="section-lead reveal">ご相談から公開まで、オンラインで進めます。</p>
+      <ol class="flow">
+        <li class="reveal"><p class="fl-h">ご相談・ヒアリング</p><p class="fl-p">会社情報・素材・デザインの希望・理念などをまとめて伺い、不足点もまとめて確認します。</p></li>
+        <li class="reveal"><p class="fl-h">ご契約・素材のご提出</p><p class="fl-p">ご契約、お支払い方法のご登録、必要な素材の受領後に制作を始めます。</p></li>
+        <li class="reveal"><p class="fl-h">構成のご確認</p><p class="fl-p">ページ構成と各ページの内容をご確認いただきます。</p></li>
+        <li class="reveal"><p class="fl-h">トップページのデザイン</p><p class="fl-p">デザインは1案をご提案します。修正は2回まで無料です。</p></li>
+        <li class="reveal"><p class="fl-h">全ページのご確認</p><p class="fl-p">全ページを仕上げてご確認いただきます。修正は2回まで無料です。</p></li>
+        <li class="reveal"><p class="fl-h">公開・月額開始</p><p class="fl-p">最終のご承認後に公開します。月額は公開日から開始し、初月は日割りです。</p></li>
+      </ol>
+      <p class="flow-note reveal">修正は各回まとめてご依頼ください。当方の誤記や実装の不備は修正回数に含めません。ご確認・素材のご提出をお待ちしている間は、制作日程を停止します。</p>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="section" id="price">
+    <div class="wrap">
+      <p class="eyebrow reveal">Pricing &amp; Terms</p>
+      <h2 class="section-h reveal">Pricing</h2>
+      <p class="section-lead reveal">表示価格は税別です。（ ）内は税込です。</p>
+      <table class="ptable reveal">
+        <tbody>
+          <tr><th scope="row">初期制作費</th><td><span class="num">0円</span></td></tr>
+          <tr><th scope="row">月額料金</th><td><span class="num">9,600円</span>（10,560円）<br>クレジットカードによる毎月の自動決済です。初月は公開日から月末までの日割り、翌月以降は毎月月初に当月分をお支払いいただきます。</td></tr>
+          <tr><th scope="row">ページの追加</th><td>通常ページ1ページにつき <span class="num">20,000円</span>（22,000円）の一回払い。月額は変わりません。</td></tr>
+          <tr><th scope="row">掲載量の目安</th><td>トップページは最大8セクション、その他のページは1ページ最大5セクションです。商品や実績を多数掲載する場合は、件数を着手前にご相談します。</td></tr>
+          <tr><th scope="row">別途お見積もり</th><td>30分を超える更新、新しい原稿の作成、構成の変更、機能・ページの追加、長いLP・特殊な機能、ファイル添付・決済機能、撮影、ロゴ制作、本格的な画像加工、取材を伴う原稿作成。着手前にお見積もりします。</td></tr>
+          <tr><th scope="row">ドメイン</th><td>通常価格の.com 1件は月額に含みます。.jp・.co.jpなど、その他のドメインは費用を確認のうえ追加料金をご案内します。</td></tr>
+          <tr><th scope="row">有料素材</th><td>事前にご承認いただいたうえで、実費をご請求します。</td></tr>
+          <tr><th scope="row">最低利用期間</th><td>公開日から12か月。以降は1か月ごとの自動更新です。解約は希望月の前月末までにお申し出ください。</td></tr>
+          <tr><th scope="row">12か月未満の解約</th><td>お客様のご都合による場合は、残りの期間の基本料金を一括でご精算いただきます。</td></tr>
+          <tr><th scope="row">サイトのお引き渡し</th><td>12か月分のお支払いが完了していれば、追加の買い取り料金なしで、サイトのソース・画像・公開手順をお渡しします。ドメインの移管にも対応します。移転先への設置・フォームの再設定は別途お見積もりです。</td></tr>
+        </tbody>
+      </table>
+      <p class="pnote reveal">軽微な更新の通常対応は平日です。24時間の有人対応は含みません。集客や採用などの成果を保証するサービスではありません。</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <p class="eyebrow reveal">FAQ</p>
+      <h2 class="section-h reveal">FAQ</h2>
+      <div class="faq">
+        <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>本当に初期費用はかかりませんか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">基本の制作（最大5ページ＋プライバシーポリシー）に初期制作費はかかりません。ページの追加や撮影など、基本の範囲を超える内容は別料金です。</div></div>
+        <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>打ち合わせは対面ですか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">ご相談からご確認まで、すべてオンラインで進めます。</div></div>
+        <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>写真や文章がそろっていなくても相談できますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">ご相談いただけます。掲載する文章は、ヒアリングとご提供資料をもとに作成し、内容の事実確認をお願いします。写真が足りない場合は、商用利用できる素材から選びます。会社やスタッフ、実績を示す写真は実物をご用意ください。</div></div>
+        <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>今使っているドメインやメールはそのまま使えますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">既存のドメインもご利用いただけます。独自ドメインのメールボックスはオプションで、お客様がメールサービスと直接ご契約いただく形です。希望される場合の初期設定代行は基本の制作に含みます。</div></div>
+        <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>自分でホームページを編集できますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">お客様用の編集画面はありません。変更したい内容をご連絡いただければ、こちらで反映します。</div></div>
+        <div class="faq-item reveal"><button class="faq-q" type="button" aria-expanded="false"><span>解約したらホームページはどうなりますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">契約終了で当方での公開・保守・フォームの運用を終了します。移転の日程は事前に調整します。12か月分のお支払いが完了していれば、サイトのソース・画像・公開手順をお渡しし、ドメインの移管にも対応します。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <h2 class="final-h reveal">まずは、いまの<br>ホームページの悩みから。</h2>
+      <p class="final-p reveal">新しく作りたい方も、今のサイトを作り直したい方も、まずはお気軽にご相談ください。</p>
+      <div class="reveal">
+        <a class="btn btn-primary" href="contact.html?service=web-subscription">制作について相談する</a>
+        <br><a class="final-mail" href="mailto:contact@tk-creative.org">contact@tk-creative.org</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="tk-footer">
+  <div class="footer-logo"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></div>
+  <nav class="footer-nav"><a href="preview.html">トップに戻る</a><a href="pricing.html">料金を見る</a><a href="web-terms.html">利用規約</a><a href="tokushoho.html">特定商取引法に基づく表記</a><a href="contact.html">お問い合わせ</a></nav>
+  <p class="footer-copy">&copy; 2026 TK-creative. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){var nav=document.getElementById('tk-nav');window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true})})();
+(function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(el){el.classList.add('revealed')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target)}})},{threshold:.04,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})})();
+(function(){document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var open=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(function(o){o.setAttribute('aria-expanded','false')});if(!open){this.setAttribute('aria-expanded','true')}})})})();
+(function(){var box=document.querySelector('[data-demo-filters]');if(!box)return;box.hidden=false;var items=document.querySelectorAll('.demo-grid li');var status=document.querySelector('[data-demo-status]');box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var f=b.getAttribute('data-filter');box.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});var n=0;items.forEach(function(it){var show=f==='all'||it.getAttribute('data-industry')===f;it.hidden=!show;if(show){n++;it.classList.add('revealed')}});if(status)status.textContent=(f==='all'?'すべての業種':b.textContent)+'の制作例を'+n+'件表示しています。'})})();
+</script>
+</body>
+</html>

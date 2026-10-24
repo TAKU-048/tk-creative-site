@@ -1,0 +1,23 @@
+// tk-creative.org を Cloudflare Workers（静的配信のみ）で公開する設定
+// 中身は site/tk-creative.org（さくらから取得した公開フォルダ）をそのまま配信する
+{
+  "name": "tk-creative-site",
+  "compatibility_date": "2026-10-01",
+  // 静的ファイルに無いURL（トップの / など）だけを処理する
+  "main": "./worker.js",
+  "assets": {
+    "directory": "./site/tk-creative.org",
+    "binding": "ASSETS",
+    // URLを今と同じ形（/preview.html など）のまま配信する
+    "html_handling": "none"
+  },
+  // 2026-10-21 ユーザー承認：tk-creative.org と www をさくら（A 49.212.207.49）からこのWorkerへ切り替え
+  // 戻す場合は Custom Domain を外し、A レコード 49.212.207.49（DNSのみ）を2つ作り直す。MX・TXTは触らない
+  "routes": [
+    { "pattern": "tk-creative.org", "custom_domain": true },
+    { "pattern": "www.tk-creative.org", "custom_domain": true }
+  ],
+  "workers_dev": true,
+  // Version / Preview URL は作らない
+  "preview_urls": false
+}

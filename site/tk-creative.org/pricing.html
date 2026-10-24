@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>料金 — TK-creative.</title>
+<meta name="description" content="TK-creative の料金一覧。ドローン空撮・サーフィン撮影などの映像制作、Web／LP制作、AI業務効率化ツール開発の各サービス料金をご案内します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{font-family:'Inter',system-ui,sans-serif;background:#0c0c0c;color:#fff;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+
+.preview-badge{position:fixed;bottom:20px;right:20px;z-index:9999;background:#fff;color:#000;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;padding:6px 14px;}
+
+/* NAV */
+#tk-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:28px 48px;transition:padding .3s,background .3s;}
+#tk-nav.scrolled{padding:16px 48px;background:rgba(12,12,12,.96);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
+.nav-logo span{color:rgba(255,255,255,.56);}
+.nav-back{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.59);transition:color .2s;}
+.nav-back:hover{color:#fff;}
+.nav-cta{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.2);padding:8px 18px;transition:color .2s,border-color .2s;}
+.nav-cta:hover{color:#fff;border-color:#fff;}
+
+/* HERO */
+#pricing-hero{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;padding-top:200px;border-bottom:1px solid rgba(255,255,255,.07);position:relative;background-image:url('images/hero-drone.jpg');background-size:cover;background-position:center;}
+#pricing-hero::before{content:'';position:absolute;inset:0;background:rgba(12,12,12,.78);z-index:0;}
+#pricing-hero>*{position:relative;z-index:1;}
+.pricing-eyebrow{font-size:.67rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.53);margin-bottom:24px;}
+.pricing-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(4rem,10vw,11rem);letter-spacing:-.04em;line-height:1.05;text-transform:uppercase;color:#fff;margin-bottom:48px;}
+.pricing-h .outline{-webkit-text-stroke:0;color:rgba(255,255,255,.62);}
+.pricing-overview{display:flex;gap:64px;border-top:1px solid rgba(255,255,255,.07);padding-top:32px;}
+.pricing-ov-item{display:flex;flex-direction:column;gap:6px;}
+.pricing-ov-tag{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.53);}
+.pricing-ov-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;}
+.pricing-ov-price{font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:#fff;letter-spacing:-.03em;}
+.pricing-ov-note{font-size:.62rem;color:rgba(255,255,255,.53);letter-spacing:.08em;}
+
+/* SECTION COMMON */
+.section-wrap{padding:100px 48px;}
+.section-label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.53);margin-bottom:16px;}
+.section-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,4rem);letter-spacing:-.04em;text-transform:uppercase;color:#fff;margin-bottom:56px;}
+
+/* JUIDA */
+.juida-bar{display:flex;align-items:center;gap:20px;padding:18px 48px;border-bottom:1px solid rgba(255,255,255,.06);}
+.juida-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.15);padding:6px 14px;}
+.juida-badge svg{width:13px;height:13px;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;opacity:.6;}
+.juida-badge-text{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.71);}
+.juida-desc{font-size:.75rem;color:rgba(255,255,255,.71);line-height:1.6;}
+
+/* PLANS */
+#plans{border-bottom:1px solid rgba(255,255,255,.07);}
+.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.06);}
+.plan-card{background:#0c0c0c;padding:64px 48px;display:flex;flex-direction:column;}
+.plan-num{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.51);margin-bottom:12px;}
+.plan-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,3rem);letter-spacing:-.03em;color:#fff;margin-bottom:6px;}
+.plan-sub{font-size:.78rem;color:rgba(255,255,255,.73);margin-bottom:36px;}
+.plan-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:6px;}
+.plan-note{font-size:.62rem;letter-spacing:.1em;color:rgba(255,255,255,.53);margin-bottom:40px;}
+.plan-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:auto;padding-bottom:40px;}
+.plan-list li{font-size:.82rem;color:rgba(255,255,255,.85);display:flex;align-items:baseline;gap:10px;}
+.plan-list li::before{content:'—';color:rgba(255,255,255,.50);flex-shrink:0;}
+.plan-badge{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.2);padding:4px 12px;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.68);margin-bottom:20px;width:fit-content;}
+.plan-btn{display:inline-flex;align-items:center;gap:12px;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.25);padding:14px 28px;transition:border-color .2s,background .2s;margin-top:auto;}
+.plan-btn:hover{border-color:#fff;background:rgba(255,255,255,.04);}
+
+/* TRAVEL */
+#travel{background:#0e0e0e;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);}
+.travel-zones{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:0;}
+.travel-zone{padding:32px 32px 32px 0;border-right:1px solid rgba(255,255,255,.06);}
+.travel-zone:last-child{border-right:none;padding-right:0;}
+.travel-zone-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.53);margin-bottom:12px;}
+.travel-zone-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.2rem,2.5vw,2rem);color:#fff;letter-spacing:-.03em;margin-bottom:8px;}
+.travel-zone-desc{font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.65;}
+
+/* REAL ESTATE */
+#realestate{border-bottom:1px solid rgba(255,255,255,.07);}
+.re-plans{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.07);}
+.re-plan{display:flex;align-items:center;justify-content:space-between;gap:48px;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:opacity .2s;}
+.re-plan:hover{opacity:.7;}
+.re-plan-left{}
+.re-plan-num{font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.51);margin-bottom:8px;}
+.re-plan-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;margin-bottom:6px;}
+.re-plan-desc{font-size:.8rem;color:rgba(255,255,255,.79);line-height:1.75;max-width:500px;}
+.re-plan-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.re-plan-tag{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.56);border:1px solid rgba(255,255,255,.1);padding:3px 10px;}
+.re-plan-right{text-align:right;flex-shrink:0;}
+.re-plan-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,2.5vw,2.2rem);color:#fff;white-space:nowrap;letter-spacing:-.03em;}
+.re-plan-price-note{font-size:.58rem;color:rgba(255,255,255,.53);letter-spacing:.1em;margin-top:4px;}
+
+/* FAQ */
+#faq{border-bottom:1px solid rgba(255,255,255,.07);}
+.faq-list{border-top:1px solid rgba(255,255,255,.07);}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-q-text{font-size:.88rem;color:rgba(255,255,255,.92);font-weight:400;}
+.faq-icon{width:28px;height:28px;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem;color:rgba(255,255,255,.62);transition:transform .3s,background .2s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(255,255,255,.08);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a-inner{font-size:.82rem;color:rgba(255,255,255,.79);line-height:1.9;padding-bottom:22px;}
+
+/* FLOW */
+#flow{background:#0e0e0e;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);}
+.flow-list{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.07);}
+.flow-step{display:flex;align-items:flex-start;gap:48px;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.flow-step-num{font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,255,255,.06);line-height:1;min-width:80px;letter-spacing:-.04em;}
+.flow-step-icon{width:44px;height:44px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;}
+.flow-step-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:.5;}
+.flow-step-body{}
+.flow-step-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:8px;}
+.flow-step-desc{font-size:.82rem;color:rgba(255,255,255,.79);line-height:1.8;}
+
+/* CTA */
+#cta{padding:120px 48px;text-align:center;border-top:1px solid rgba(255,255,255,.07);}
+.cta-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,6vw,6rem);letter-spacing:-.04em;text-transform:uppercase;line-height:.9;margin-bottom:56px;}
+.cta-h .outline{-webkit-text-stroke:0;color:rgba(255,255,255,.62);}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.3);padding:16px 40px;transition:border-color .2s,background .2s;}
+.cta-btn:hover{border-color:#fff;background:rgba(255,255,255,.04);}
+.cta-email{display:block;margin-top:18px;font-size:.6rem;letter-spacing:.1em;color:rgba(255,255,255,.50);}
+
+/* FOOTER */
+#tk-footer{padding:32px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.06);}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.50);}
+.footer-copy{font-size:.67rem;letter-spacing:.08em;color:rgba(255,255,255,.47);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,.8,.3,1),transform .8s cubic-bezier(.22,.8,.3,1);}
+.reveal.revealed{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+
+/* MOBILE */
+@media(max-width:768px){
+  #tk-nav{padding:20px 24px;}
+  #tk-nav.scrolled{padding:14px 24px;}
+  #pricing-hero{padding:120px 24px 60px;}
+  .pricing-overview{flex-direction:column;gap:28px;}
+  .section-wrap{padding:64px 24px;}
+  .juida-bar{padding:14px 24px;flex-wrap:wrap;gap:10px;}
+  .plans-grid{grid-template-columns:1fr;}
+  .plan-card{padding:44px 24px;}
+  .travel-zones{grid-template-columns:repeat(2,1fr);gap:24px;}
+  .travel-zone{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:0 0 24px 0;}
+  .travel-zone:last-child{border-bottom:none;}
+  .re-plan{flex-direction:column;gap:16px;}
+  .re-plan-right{text-align:left;}
+  .flow-step{gap:24px;}
+  .flow-step-num{font-size:2rem;min-width:48px;}
+  #cta{padding:80px 24px;}
+  .cta-h{font-size:clamp(1.8rem,12vw,3rem);}
+  #tk-footer{flex-direction:column;gap:12px;text-align:center;padding:24px;}
+}
+
+/* ===== 料金ハブ用の追加スタイル ===== */
+/* サービス切り替えタブ（スクロール追従） */
+#svc-tabs{position:sticky;top:0;z-index:90;display:flex;gap:2px;background:rgba(12,12,12,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1);padding:0 48px;}
+.svc-tab{flex:1;text-align:center;padding:20px 12px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);border-bottom:2px solid transparent;transition:color .2s,border-color .2s;cursor:pointer;}
+.svc-tab:hover{color:rgba(255,255,255,.85);}
+.svc-tab.active{color:#fff;border-bottom-color:#fff;}
+.svc-tab-jp{display:block;font-size:.6rem;letter-spacing:.1em;text-transform:none;color:rgba(255,255,255,.5);margin-top:4px;}
+.svc-tab.active .svc-tab-jp{color:rgba(255,255,255,.7);}
+
+/* セクション見出しの帯 */
+.svc-band{padding:88px 48px 0;border-top:1px solid rgba(255,255,255,.08);}
+.svc-band--alt{background:#131417;}
+.svc-band-num{font-family:'Syne',sans-serif;font-weight:800;font-size:.7rem;letter-spacing:.28em;color:rgba(255,255,255,.5);margin-bottom:14px;}
+.svc-band-h{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4.5vw,4rem);letter-spacing:-.04em;text-transform:uppercase;color:#fff;line-height:1.02;margin-bottom:14px;}
+.svc-band-lead{font-size:.85rem;color:rgba(255,255,255,.78);line-height:1.9;max-width:640px;}
+
+
+/* 料金行（プランが多いサービス向け） */
+.rate-rows{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.08);margin-top:8px;}
+.rate-row{display:flex;align-items:center;justify-content:space-between;gap:48px;padding:32px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:opacity .2s;}
+.rate-row:hover{opacity:.75;}
+.rate-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:#fff;margin-bottom:6px;}
+.rate-desc{font-size:.8rem;color:rgba(255,255,255,.78);line-height:1.75;max-width:560px;}
+.rate-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.rate-tag{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.12);padding:3px 10px;}
+.rate-right{text-align:right;flex-shrink:0;}
+.rate-price--range{font-size:clamp(1.05rem,1.85vw,1.5rem)!important;}
+.rate-price{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,2.4vw,2.1rem);color:#fff;white-space:nowrap;letter-spacing:-.03em;}
+.rate-note{font-size:.6rem;color:rgba(255,255,255,.55);letter-spacing:.08em;margin-top:5px;}
+
+/* 補足ボックス */
+.note-box{border:1px solid rgba(255,255,255,.1);padding:26px 30px;margin-top:44px;background:rgba(255,255,255,.02);}
+.note-box-title{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:12px;}
+.note-box-body{font-size:.78rem;color:rgba(255,255,255,.76);line-height:1.9;}
+.surf-school-link{display:flex;align-items:center;justify-content:space-between;gap:32px;margin:0 48px 100px;padding:32px 40px;border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.035);transition:background .2s,border-color .2s;}
+.surf-school-link:hover{background:rgba(255,255,255,.09);border-color:#fff;}
+.surf-school-link-kicker{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.56);margin-bottom:10px;}
+.surf-school-link-title{font-family:'Syne',sans-serif;font-size:clamp(1.25rem,2.4vw,2rem);font-weight:800;letter-spacing:-.035em;color:#fff;line-height:1.15;}
+.surf-school-link-desc{font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.8;margin-top:9px;max-width:620px;}
+.surf-school-link-arrow{width:48px;height:48px;flex:none;display:grid;place-items:center;border:1px solid #fff;color:#0c0c0c;background:#fff;font-size:1.15rem;}
+
+@media(max-width:768px){
+  #svc-tabs{padding:0 12px;}
+  .svc-tab{padding:14px 6px;font-size:.58rem;letter-spacing:.1em;}
+  .svc-tab-jp{font-size:.54rem;}
+  .svc-band{padding:56px 20px 0;}
+  .rate-row{flex-direction:column;align-items:flex-start;gap:16px;padding:24px 0;}
+  .rate-right{text-align:left;}
+  .note-box{padding:20px 18px;margin-top:32px;}
+  .surf-school-link{margin:0 24px 64px;padding:24px;}
+}
+
+
+/* 折り返し防止 — ボタン・タグ・ナビは1行で表示する */
+.nav-logo,.nav-back,.nav-cta,.nav-pricing,.filter-btn,.plan-btn,.cta-btn,.btn-primary,.btn-ghost,
+.submit-btn,.tool-btn,.work-badge,.rate-tag,.skill,.tool-tag,.re-plan-tag,.plan-badge,.juida-txt,
+.rate-price,.plan-price,.tool-price,.pricing-ov-price{white-space:nowrap;}
+/* タグ類は枠線をつけて要素として認識しやすくする */
+.rate-tag,.skill,.tool-tag,.re-plan-tag,.work-badge{border:1px solid rgba(255,255,255,.22);padding:4px 11px;border-radius:2px;display:inline-flex;align-items:center;}
+/* 長いタグは折り返さず横に流す */
+.rate-tags,.tool-tags,.re-plan-tags,.about-skills{display:flex;flex-wrap:wrap;gap:8px;}
+
+/* 短いラベル・金額は折り返さない */
+.travel-zone-price,.travel-zone-label,.re-plan-price,.rate-price,.plan-price,
+.pricing-ov-price,.pricing-ov-tag,.tool-price,.svc-num,.plan-num,.rate-note,
+.work-year,.filter-count,.juida-badge-text{white-space:nowrap;}
+@media(max-width:768px){
+  /* 英字の大見出しは幅に収める */
+  .svc-band-h{font-size:clamp(1.5rem,7.5vw,2.4rem);}
+  /* 出張費の区分は縦積みにして潰れを防ぐ */
+  .travel-zones{grid-template-columns:1fr!important;}
+  .travel-zone{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.06);padding:22px 0!important;}
+}
+
+/* ボタンは面で塗り、タグ（枠線のみ）と区別する */
+.cta-btn,.plan-btn,.submit-btn,.tool-btn,.btn-primary,.nav-cta{
+  background:#fff!important;color:#0c0c0c!important;border:1px solid #fff!important;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.cta-btn:hover,.plan-btn:hover,.submit-btn:hover,.tool-btn:hover,.btn-primary:hover,.nav-cta:hover{
+  background:transparent!important;color:#fff!important;border-color:#fff!important;
+}
+/* 副次的なボタンは枠線を強めて、タグより主張させる */
+.btn-ghost,.filter-btn{border:1px solid rgba(255,255,255,.4);padding:10px 22px;color:rgba(255,255,255,.85);}
+.btn-ghost:hover,.filter-btn:hover,.filter-btn.active{border-color:#fff;color:#fff;background:rgba(255,255,255,.06);}
+/* タグは塗らない（枠線のみ）ことを明示 */
+.rate-tag,.skill,.tool-tag,.re-plan-tag,.work-badge{background:transparent!important;color:rgba(255,255,255,.7)!important;}
+
+@media(max-width:768px){
+  /* ヘッダーが横に収まらないため要素を整理する */
+  /* 右側のボタン群をひとまとまりに寄せる */
+  #tk-nav{padding:14px 14px;gap:6px;justify-content:flex-start;}
+  /* 戻る以降を右端へ寄せ、ボタン同士は隣接させる */
+  .nav-back{margin-left:0;}
+  #tk-nav.scrolled{padding:12px 16px;}
+  .nav-logo{font-size:.62rem;letter-spacing:.04em;margin-right:auto;flex-shrink:0;}
+  /* 戻るリンクは短縮表示にして収める */
+  .nav-back{font-size:.58rem;letter-spacing:.04em;border:1px solid rgba(255,255,255,.3);padding:9px 12px;color:rgba(255,255,255,.85);flex-shrink:0;}
+  .nav-back .long{display:none;}
+  .nav-cta,.nav-pricing{font-size:.58rem;letter-spacing:.04em;padding:9px 12px;flex-shrink:0;}
+  .nav-links{gap:16px;}
+  .nav-links a{font-size:.52rem;letter-spacing:.08em;}
+}
+@media(max-width:420px){
+  .nav-logo{font-size:.56rem;letter-spacing:.03em;}
+  #tk-nav{padding:12px 10px;gap:6px;}
+  .nav-back{font-size:.56rem;padding:8px 11px;}
+  .nav-cta,.nav-pricing{font-size:.56rem;padding:8px 11px;}
+}
+
+/* フッターの回遊リンク */
+#tk-footer{flex-wrap:wrap;gap:20px;}
+.footer-nav{display:flex;flex-wrap:wrap;gap:8px;order:-1;width:100%;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:4px;}
+.footer-nav a{font-size:.62rem;letter-spacing:.12em;color:#0c0c0c;background:#fff;border:1px solid #fff;padding:11px 20px;white-space:nowrap;transition:background .2s,color .2s;}
+.footer-nav a:hover{background:transparent;color:#fff;border-color:#fff;}
+@media(max-width:768px){
+  #tk-footer{align-items:flex-start;text-align:left!important;}
+  .footer-nav{gap:6px;}
+  .footer-nav a{font-size:.55rem;padding:8px 12px;letter-spacing:.08em;}
+}
+
+@media(max-width:768px){
+  /* CTAの大見出しは折り返しすぎるため詰める */
+  .cta-h{font-size:clamp(1.1rem,5.6vw,1.9rem);line-height:1.25;letter-spacing:-.02em;}
+  .cta-h br{display:none;}
+}
+
+/* 金額の数字は読みやすさを優先し、装飾書体をやめる */
+.rate-price,.plan-price,.tool-price,.pricing-ov-price,.re-plan-price,
+.travel-zone-price,.price,.plan-price-main{
+  font-family:'Inter',system-ui,sans-serif!important;
+  font-weight:600!important;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:'tnum' 1;
+  letter-spacing:-.01em!important;
+}
+
+/* 依頼の流れの番号 — 装飾として薄すぎたため視認できる濃さへ */
+.flow-step-num{color:rgba(255,255,255,.42)!important;font-family:'Inter',system-ui,sans-serif!important;font-weight:700!important;font-variant-numeric:tabular-nums;}
+#tk-nav,#tk-nav.scrolled{background:#121414;border-bottom:1px solid rgba(255,255,255,.08)}
+#tk-footer{background:#080909;border-top:1px solid rgba(255,255,255,.09)}
+.footer-logo{line-height:0}
+.footer-logo img{display:block;width:84px;height:auto;filter:brightness(0) saturate(100%) invert(72%) sepia(37%) saturate(801%) hue-rotate(3deg) brightness(87%) contrast(85%)}
+@media(max-width:768px){.footer-logo img{width:72px}}
+.nav-cta,.nav-pricing,.nav-back,.cta-btn,.plan-btn,.submit-btn,.tool-btn,.btn-primary,.btn-ghost,.filter-btn,.contact-cta,.price-btn,.button-primary,.footer-nav a,.pricing-link,.surf-school-link,.surf-school-link-arrow{border-radius:8px!important}
+.nav-cta,.nav-pricing,.cta-btn,.plan-btn,.submit-btn,.tool-btn,.btn-primary,.contact-cta,.price-btn,.pricing-link,.surf-school-link-arrow{background:#58b9b5!important;color:#071716!important;border-color:#58b9b5!important}
+.nav-cta:hover,.nav-pricing:hover,.cta-btn:hover,.plan-btn:hover,.submit-btn:hover,.tool-btn:hover,.btn-primary:hover,.contact-cta:hover,.price-btn:hover,.pricing-link:hover,.surf-school-link:hover .surf-school-link-arrow{background:#73cbc7!important;color:#071716!important;border-color:#73cbc7!important}
+.nav-back,.btn-ghost,.filter-btn,.footer-nav a,.surf-school-link{background:transparent!important;border:1px solid #58b9b5!important;color:#75d1cd!important}
+.nav-back:hover,.btn-ghost:hover,.filter-btn:hover,.filter-btn.active,.footer-nav a:hover,.surf-school-link:hover{background:rgba(88,185,181,.12)!important;border-color:#75d1cd!important;color:#a7e5e2!important}
+.faq-icon{border-color:#58b9b5!important;color:#75d1cd!important}
+.preview-badge{position:fixed;right:12px;bottom:22px;z-index:9999;display:flex;flex-direction:column;align-items:center;gap:8px;background:transparent!important;color:#58b9b5!important;padding:0!important;border:0!important;box-shadow:none!important;font-size:.52rem;line-height:1;letter-spacing:.16em;text-transform:uppercase;writing-mode:vertical-rl;pointer-events:none;user-select:none}
+.preview-badge::after{content:"";display:block;width:9px;height:38px;background:currentColor;clip-path:polygon(44% 0,56% 0,56% 80%,100% 68%,100% 72%,50% 100%,0 72%,0 68%,44% 80%)}
+@media(max-width:600px){.preview-badge{display:none!important}}
+.nav-logo{display:flex;align-items:center;line-height:0}
+.nav-logo img{display:block;width:96px;height:auto;filter:brightness(0) saturate(100%) invert(72%) sepia(37%) saturate(801%) hue-rotate(3deg) brightness(87%) contrast(85%)}
+.cta-h{line-height:1.15!important}
+@media(max-width:768px){.nav-logo img{width:72px}}
+.nav-back,.nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px!important}
+@media(min-width:769px){#tk-nav{justify-content:flex-start}.nav-back{margin-left:auto}.nav-cta{margin-left:16px}}
+@media(max-width:768px){.nav-back,.nav-cta{display:inline-flex!important;align-items:center;justify-content:center;min-height:48px!important;padding:10px 14px!important}.nav-cta{margin-left:8px}}
+/* アクセシビリティ修正：番号のコントラスト4.5:1以上、操作領域48px以上 */
+.flow-step-num{color:rgba(255,255,255,.58)!important}
+.footer-nav a{display:inline-flex!important;align-items:center;min-height:48px}
+.note-box-body a{display:inline-block;padding:12px 0;margin:-12px 0}
+</style>
+</head><body>
+<div class="preview-badge">Preview</div>
+
+<nav id="tk-nav">
+  <a class="nav-logo" href="preview.html" aria-label="TK-creative トップページ"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></a>
+  <a class="nav-back" href="preview.html">← トップ<span class="long">に戻る</span></a>
+  <a class="nav-cta" href="contact.html">相談する</a>
+</nav>
+
+<!-- HERO -->
+<section id="pricing-hero">
+  <p class="pricing-eyebrow reveal">Pricing</p>
+  <h1 class="pricing-h reveal">料<span class="outline">金</span></h1>
+  <div class="pricing-overview reveal reveal-d1">
+    <div class="pricing-ov-item">
+      <span class="pricing-ov-tag">Film</span>
+      <span class="pricing-ov-name">映像制作</span>
+      <span class="pricing-ov-price">¥15,000〜</span>
+      <span class="pricing-ov-note">税抜 / ワンセッション</span>
+    </div>
+    <div class="pricing-ov-item">
+      <span class="pricing-ov-tag">Web</span>
+      <span class="pricing-ov-name">Web・LP制作</span>
+      <span class="pricing-ov-price">¥9,600</span>
+      <span class="pricing-ov-note">税抜 / 月額・初期制作費0円</span>
+    </div>
+    <div class="pricing-ov-item">
+      <span class="pricing-ov-tag">AI</span>
+      <span class="pricing-ov-name">AI・ツール開発</span>
+      <span class="pricing-ov-price">¥50,000〜</span>
+      <span class="pricing-ov-note">税抜 / 初回相談は無料</span>
+    </div>
+  </div>
+  <p style="margin-top:28px;font-size:.7rem;letter-spacing:.06em;color:rgba(255,255,255,.62);">表示価格はすべて税抜です。別途消費税を申し受けます。</p>
+</section>
+
+<!-- サービス切り替えタブ -->
+<nav id="svc-tabs">
+  <a class="svc-tab active" href="#svc-film">Film<span class="svc-tab-jp">映像制作</span></a>
+  <a class="svc-tab" href="#svc-web">Web / LP<span class="svc-tab-jp">サイト制作</span></a>
+  <a class="svc-tab" href="#svc-ai">AI Solution<span class="svc-tab-jp">ツール開発</span></a>
+</nav>
+
+<!-- ============ 01 映像制作 ============ -->
+<section id="svc-film" class="svc-band">
+  <p class="svc-band-num reveal">Service 01</p>
+  <h2 class="svc-band-h reveal">Film</h2>
+  <p class="svc-band-lead reveal">ドローン空撮・サーフィン撮影・映像編集。撮影から納品まで一貫して対応します。静岡県を拠点に活動中。バリ島で4年間培った経験をもとに、最良のタイミングを狙います。<br><br><strong>撮影は写真・動画ともにドローンによる空撮に限ります。</strong>地上からの撮影はお受けしておりません。</p>
+</section>
+
+<section class="section-wrap" style="padding-top:48px;">
+  <div class="rate-rows reveal">
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">Session</p>
+        <p class="rate-desc">撮影した全データをそのままお渡しする、生データ渡しプラン。編集はご自身で行いたい方に。</p>
+        <div class="rate-tags"><span class="rate-tag">撮影80分</span><span class="rate-tag">全データ納品</span><span class="rate-tag">MP4 / RAW</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">¥15,000</p>
+        <p class="rate-note">税抜 / ワンセッション</p>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">Session + Edit</p>
+        <p class="rate-desc">カット・BGM・カラー調整まで行い、そのまま公開できるハイライト動画をお渡しします。生データも付属。</p>
+        <div class="rate-tags"><span class="rate-tag">撮影80分</span><span class="rate-tag">簡易編集</span><span class="rate-tag">1〜3分</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">¥20,000</p>
+        <p class="rate-note">税抜 / ワンセッション</p>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">不動産 Plan A</p>
+        <p class="rate-desc">物件の写真撮影プラン。外観・周辺環境を空から押さえ、物件情報の掲載に使える写真をお渡しします。</p>
+        <div class="rate-tags"><span class="rate-tag">写真</span><span class="rate-tag">1物件</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">¥20,000</p>
+        <p class="rate-note">税抜 / 1物件</p>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">不動産 Plan B</p>
+        <p class="rate-desc">写真に加え、物件周辺の空撮動画（1〜2分）を制作。YouTubeやSNSでの物件PR、内覧動画に活用いただけます。</p>
+        <div class="rate-tags"><span class="rate-tag">写真</span><span class="rate-tag">空撮動画</span><span class="rate-tag">1〜2分</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">¥35,000</p>
+        <p class="rate-note">税抜 / 1物件</p>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">不動産 Plan C</p>
+        <p class="rate-desc">フルパッケージ。ホテル・リゾート・商業施設など、規模の大きなプロモーション映像に対応します。</p>
+        <div class="rate-tags"><span class="rate-tag">写真</span><span class="rate-tag">動画</span><span class="rate-tag">編集込み</span><span class="rate-tag">要相談</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">¥60,000〜</p>
+        <p class="rate-note">税抜 / 要相談</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note-box reveal">
+    <p class="note-box-title">撮影の範囲と出張費について</p>
+    <p class="note-box-body">静岡県を中心に対応しています。その他の県は出張費用がかかります。</p>
+  </div>
+</section>
+
+<!-- サーフスクール導入への専用導線：個人向け撮影料金とは別の事業者向けページ -->
+<a class="surf-school-link reveal" href="surf-school-drone.html" aria-label="サーフスクール導入の詳細を見る">
+  <div>
+    <p class="surf-school-link-kicker">For Surf School Owners</p>
+    <h2 class="surf-school-link-title">サーフスクール導入はこちら</h2>
+    <p class="surf-school-link-desc">通常レッスンに、ドローン空撮と生徒さん向け思い出動画のオプションを追加する、スクール事業者向けの提携撮影サービスです。</p>
+  </div>
+  <span class="surf-school-link-arrow" aria-hidden="true">→</span>
+</a>
+
+<!-- ============ 02 Web / LP ============ -->
+<section id="svc-web" class="svc-band svc-band--alt">
+  <p class="svc-band-num reveal">Service 02</p>
+  <h2 class="svc-band-h reveal">Web / LP</h2>
+  <p class="svc-band-lead reveal">集客・成約に特化したサイト制作。デザインから実装まで一貫して対応します。撮影から実装まで一人で完結できるため、映像を使ったページも追加費用なく組み込めます。</p>
+</section>
+
+<section class="section-wrap svc-band--alt" style="padding-top:48px;">
+  <div class="rate-rows reveal">
+
+    <a class="rate-row" href="web-subscription.html" aria-label="ホームページ制作・月額管理サービスの詳細を見る">
+      <div>
+        <p class="rate-name">ホームページ制作・月額管理</p>
+        <p class="rate-desc">初期制作費0円。最大5ページの制作に、ドメイン・サーバー・SSL・月1回の更新対応・保守を含む月額サービスです。詳しくは専用ページをご覧ください。</p>
+        <div class="rate-tags"><span class="rate-tag">初期制作費0円</span><span class="rate-tag">最大5ページ</span><span class="rate-tag">ドメイン込み</span><span class="rate-tag">更新・保守込み</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">¥9,600</p>
+        <p class="rate-note">税抜 / 月額</p>
+        <p class="rate-note" style="color:rgba(255,255,255,.72);">最低利用期間12か月 →</p>
+      </div>
+    </a>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">ECサイト・決済つきサイト</p>
+        <p class="rate-desc">商品の販売や決済機能を伴うサイト。決済手段・商品数・在庫管理の要件によって内容が大きく変わるため、個別にお見積もりします。</p>
+        <div class="rate-tags"><span class="rate-tag">カート</span><span class="rate-tag">決済連携</span><span class="rate-tag">在庫管理</span><span class="rate-tag">会員機能</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">要相談</p>
+        <p class="rate-note">要件により変動</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 03 AI Solution ============ -->
+<section id="svc-ai" class="svc-band">
+  <p class="svc-band-num reveal">Service 03</p>
+  <h2 class="svc-band-h reveal">AI Solution</h2>
+  <p class="svc-band-lead reveal">日々の業務をAIで自動化・効率化するカスタムツールを制作します。作業内容や規模に応じてお見積もりします。ヒアリングとお見積もりは無料です。</p>
+</section>
+
+<section class="section-wrap" style="padding-top:48px;">
+  <div class="rate-rows reveal">
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">ヒアリング・ご提案</p>
+        <p class="rate-desc">現在の作業の流れを伺い、AIで自動化できる箇所とどれだけ手間が減るかを整理してご提案します。ここまで費用はかかりません。</p>
+        <div class="rate-tags"><span class="rate-tag">オンライン</span><span class="rate-tag">提案書つき</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">無料</p>
+        <p class="rate-note">初回相談</p>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">定型業務の自動化</p>
+        <p class="rate-desc">スプレッドシートの転記・集計、メールやチャットへの自動通知、レポート生成など、繰り返している作業を自動化します。</p>
+        <div class="rate-tags"><span class="rate-tag">GAS</span><span class="rate-tag">スプレッドシート</span><span class="rate-tag">通知連携</span><span class="rate-tag">操作説明つき</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price rate-price--range">¥50,000〜150,000</p>
+        <p class="rate-note">税抜 / 規模による</p>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">AIツール開発</p>
+        <p class="rate-desc">業務に合わせた専用ツールをゼロから制作。文章生成・画像処理・データ整理など、AIを組み込んだ仕組みをお作りします。</p>
+        <div class="rate-tags"><span class="rate-tag">要件定義</span><span class="rate-tag">個別開発</span><span class="rate-tag">運用サポート</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price">¥200,000〜</p>
+        <p class="rate-note">税抜 / 要件により変動</p>
+      </div>
+    </div>
+
+    <div class="rate-row">
+      <div>
+        <p class="rate-name">保守・改修</p>
+        <p class="rate-desc">納品後の動作確認、仕様変更への対応、機能追加を継続して承ります。作りっぱなしにしません。</p>
+        <div class="rate-tags"><span class="rate-tag">月額</span><span class="rate-tag">動作監視</span><span class="rate-tag">改修対応</span></div>
+      </div>
+      <div class="rate-right">
+        <p class="rate-price rate-price--range">¥10,000〜30,000</p>
+        <p class="rate-note">税抜 / 月額</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note-box reveal">
+    <p class="note-box-title">まずは既製ツールという選択肢も</p>
+    <p class="note-box-body">SNSの一括投稿については、開発済みのツール <a href="https://oneposts.club" target="_blank" rel="noopener" style="text-decoration:underline;">ONEPOST</a> を月額¥2,980でご利用いただけます。ゼロから作るより早く、安く始められます。<br><br>「そもそも何を自動化すべきか分からない」という段階でも構いません。作らないほうがよい場合は、正直にそうお伝えします。</p>
+  </div>
+
+  <div class="note-box reveal">
+    <p class="note-box-title">補助金のご案内</p>
+    <p class="note-box-body">中小企業の場合、AI関連ツールやシステムの導入費用に対して <strong>IT導入補助金</strong> をご利用いただける可能性があります。申請の要否や進め方についてもご相談ください。</p>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow" class="section-wrap">
+  <p class="section-label reveal">Process</p>
+  <h2 class="section-h reveal">依頼の流れ</h2>
+  <div class="flow-list reveal">
+    <div class="flow-step">
+      <div class="flow-step-num">01</div>
+      <div class="flow-step-body">
+        <p class="flow-step-title">お問い合わせ</p>
+        <p class="flow-step-desc">メールまたはお問い合わせフォームからご連絡ください。ご要望とおおよそのご予算をお知らせいただけるとスムーズです。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">02</div>
+      <div class="flow-step-body">
+        <p class="flow-step-title">ヒアリング・お見積もり</p>
+        <p class="flow-step-desc">オンラインで詳細を伺い、内容と金額をご提示します。ここまで費用はかかりません。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">03</div>
+      <div class="flow-step-body">
+        <p class="flow-step-title">制作・撮影</p>
+        <p class="flow-step-desc">スケジュールを調整のうえ着手します。途中経過は随時ご確認いただけます。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">04</div>
+      <div class="flow-step-body">
+        <p class="flow-step-title">納品・お支払い</p>
+        <p class="flow-step-desc">ご確認いただき、修正を反映のうえ納品します。お支払いは、サブスクリプションの開始日から自動引き落としが始まります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section-wrap">
+  <p class="section-label reveal">FAQ</p>
+  <h2 class="section-h reveal">よくある質問</h2>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">見積もりは無料ですか？</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-inner">無料です。ヒアリングからお見積もりのご提示まで費用はかかりません。内容にご納得いただいてから着手します。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">支払い方法を教えてください</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-inner">月額サービスとして、クレジットカードによる毎月の自動決済のみとなります。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">修正は何回まで対応してもらえますか？</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-inner">2回まで無料で対応します。それ以降、または当初のご要望から大きく変わる場合は別途お見積もりします。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">遠方でも依頼できますか？</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-inner">静岡県を中心に対応しています。その他の県は出張費用がかかります。</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">複数のサービスをまとめて頼めますか？</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-inner">可能です。撮影とサイト制作をあわせてご依頼いただく場合など、まとめてお見積もりします。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <h2 class="cta-h reveal">まずは<br><span class="outline">相談から。</span></h2>
+  <a class="cta-btn reveal reveal-d1" href="contact.html">お問い合わせ →</a>
+  <span class="cta-email reveal reveal-d2">contact@tk-creative.org</span>
+</section>
+
+<footer id="tk-footer">
+  <nav class="footer-nav">
+    <a href="preview.html">&larr; トップに戻る</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="footer-logo"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></div>
+  <p class="footer-copy">&copy; 2026 TK-creative. All rights reserved.</p>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('tk-nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+})();
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('revealed');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target);}});},{threshold:0.04,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+(function(){ // FAQ 開閉
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var open=item.classList.toggle('open');
+      var a=item.querySelector('.faq-a');
+      a.style.maxHeight=open?a.scrollHeight+'px':'0px';
+    });
+  });
+})();
+(function(){ // 表示中のセクションに合わせてタブを光らせる
+  var tabs=[].slice.call(document.querySelectorAll('.svc-tab'));
+  var secs=tabs.map(function(t){return document.querySelector(t.getAttribute('href'));});
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var i=secs.indexOf(e.target);
+      if(i<0)return;
+      tabs.forEach(function(t,n){t.classList.toggle('active',n===i);});
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){if(s)io.observe(s);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TK-creative 配色案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#e9eef2; padding:40px 20px; }
+.label { max-width:1040px; margin:0 auto 14px; font-family:'Noto Sans JP',sans-serif; }
+.label h2 { font-size:1.1rem; color:#1a2530; margin-bottom:4px; }
+.label p { font-size:0.82rem; color:#5a6a78; line-height:1.7; }
+.mock { max-width:1040px; margin:0 auto 56px; border-radius:18px; overflow:hidden; box-shadow:0 16px 50px rgba(20,40,60,0.14); }
+
+/* shared layout */
+.nav { display:flex; justify-content:space-between; align-items:center; padding:22px 40px; }
+.logo { font-weight:700; letter-spacing:0.04em; }
+.logo span { display:block; font-weight:400; font-size:0.62rem; letter-spacing:0.25em; opacity:0.6; margin-top:1px; }
+.menu { display:flex; gap:28px; align-items:center; font-size:0.78rem; letter-spacing:0.06em; }
+.menu .cta { padding:8px 20px; border-radius:999px; font-weight:600; }
+.hero { padding:64px 40px 56px; }
+.tag { font-size:0.7rem; letter-spacing:0.28em; text-transform:uppercase; margin-bottom:20px; font-weight:600; }
+.title { font-size:3.4rem; line-height:1.12; font-weight:700; letter-spacing:-0.01em; margin-bottom:18px; }
+.sub { font-size:1.02rem; line-height:1.8; margin-bottom:28px; max-width:520px; }
+.btns { display:flex; gap:14px; flex-wrap:wrap; }
+.btn { padding:13px 28px; border-radius:999px; font-size:0.82rem; font-weight:600; letter-spacing:0.03em; }
+.btn.ghost { background:transparent; }
+.stats { display:flex; gap:0; }
+.stat { flex:1; text-align:center; padding:24px 10px; }
+.stat .num { font-size:1.9rem; font-weight:700; }
+.stat .cap { font-size:0.68rem; letter-spacing:0.12em; margin-top:3px; opacity:0.7; }
+
+/* ===== A: Ocean Blue ===== */
+.A { font-family:'Inter','Noto Sans JP',sans-serif; background:#ffffff; }
+.A .logo { color:#0e3a5c; }
+.A .menu { color:#3f5870; }
+.A .menu .cta { background:#0e87c9; color:#fff; }
+.A .hero { background:linear-gradient(160deg,#f3f9fc 0%,#e4f1f8 100%); }
+.A .tag { color:#0e87c9; }
+.A .title { color:#0e3a5c; }
+.A .title em { font-style:normal; color:#0e87c9; }
+.A .sub { color:#46606f; }
+.A .btn.solid { background:#0e87c9; color:#fff; }
+.A .btn.ghost { border:1.5px solid #b7d6e6; color:#0e3a5c; }
+.A .stats { background:#0e3a5c; }
+.A .stat { color:#fff; border-right:1px solid rgba(255,255,255,0.12); }
+.A .stat:last-child { border:none; }
+.A .stat .num { color:#5cc6f0; }
+
+/* ===== B: Natural Green ===== */
+.B { font-family:'Poppins','Zen Maru Gothic',sans-serif; background:#fffdf8; }
+.B .logo { color:#2f4632; }
+.B .menu { color:#5c6b5a; }
+.B .menu .cta { background:#5a8a55; color:#fff; }
+.B .hero { background:linear-gradient(160deg,#f7f4ea 0%,#eef3e6 100%); }
+.B .tag { color:#5a8a55; }
+.B .title { color:#2f4632; }
+.B .title em { font-style:normal; color:#c08a3e; }
+.B .sub { color:#5a6657; }
+.B .btn.solid { background:#5a8a55; color:#fff; }
+.B .btn.ghost { border:1.5px solid #cdd9c0; color:#3a4a36; }
+.B .stats { background:#2f4632; }
+.B .stat { color:#fff; border-right:1px solid rgba(255,255,255,0.12); }
+.B .stat:last-child { border:none; }
+.B .stat .num { color:#bcd49a; }
+
+/* ===== C: Bright & Clean ===== */
+.C { font-family:'Inter','Noto Sans JP',sans-serif; background:#ffffff; }
+.C .logo { color:#15233a; }
+.C .menu { color:#5566778; color:#556677; }
+.C .menu .cta { background:#ff6b5e; color:#fff; }
+.C .hero { background:linear-gradient(160deg,#ffffff 0%,#eef5ff 100%); }
+.C .tag { color:#ff6b5e; }
+.C .title { color:#15233a; }
+.C .title em { font-style:normal; color:#2f7bf6; }
+.C .sub { color:#566677; }
+.C .btn.solid { background:#2f7bf6; color:#fff; }
+.C .btn.ghost { border:1.5px solid #d6e2f5; color:#15233a; }
+.C .stats { background:#f4f8ff; }
+.C .stat { color:#15233a; border-right:1px solid #e2ebf7; }
+.C .stat:last-child { border:none; }
+.C .stat .num { color:#2f7bf6; }
+</style>
+</head>
+<body>
+
+<div class="label">
+  <h2>案A — オーシャンブルー（海・空 / 信頼感・爽やか）</h2>
+  <p>フォント: Inter + Noto Sans JP　／　白基調＋ディープブルー＋ターコイズのアクセント</p>
+</div>
+<div class="mock A">
+  <div class="nav">
+    <div class="logo">TK-creative<span>CREATOR</span></div>
+    <div class="menu"><span>Services</span><span>Works</span><span>About</span><span class="cta">Contact</span></div>
+  </div>
+  <div class="hero">
+    <div class="tag">— バリ仕込みのクリエイター</div>
+    <div class="title">アイデアを、<br><em>形に。</em></div>
+    <div class="sub">テクノロジーとクリエイティブで、あなたのビジネスを前へ。AIアプリ開発・Web制作・ドローン映像まで一貫してお届けします。</div>
+    <div class="btns"><span class="btn solid">お仕事のご依頼</span><span class="btn ghost">実績を見る</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num">4+</div><div class="cap">バリ滞在年数</div></div>
+    <div class="stat"><div class="num">AI</div><div class="cap">アプリ開発</div></div>
+    <div class="stat"><div class="num">Web</div><div class="cap">LP制作</div></div>
+    <div class="stat"><div class="num">4K</div><div class="cap">ドローン映像</div></div>
+  </div>
+</div>
+
+<div class="label">
+  <h2>案B — ナチュラルグリーン（自然・リラックス / 親しみ）</h2>
+  <p>フォント: Poppins + Zen Maru Gothic（丸み）　／　オフホワイト＋セージグリーン＋アースカラー</p>
+</div>
+<div class="mock B">
+  <div class="nav">
+    <div class="logo">TK-creative<span>CREATOR</span></div>
+    <div class="menu"><span>Services</span><span>Works</span><span>About</span><span class="cta">Contact</span></div>
+  </div>
+  <div class="hero">
+    <div class="tag">— バリ仕込みのクリエイター</div>
+    <div class="title">アイデアを、<br><em>形に。</em></div>
+    <div class="sub">テクノロジーとクリエイティブで、あなたのビジネスを前へ。AIアプリ開発・Web制作・ドローン映像まで一貫してお届けします。</div>
+    <div class="btns"><span class="btn solid">お仕事のご依頼</span><span class="btn ghost">実績を見る</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num">4+</div><div class="cap">バリ滞在年数</div></div>
+    <div class="stat"><div class="num">AI</div><div class="cap">アプリ開発</div></div>
+    <div class="stat"><div class="num">Web</div><div class="cap">LP制作</div></div>
+    <div class="stat"><div class="num">4K</div><div class="cap">ドローン映像</div></div>
+  </div>
+</div>
+
+<div class="label">
+  <h2>案C — ブライト＆クリーン（モダン・軽快 / IT・スタートアップ感）</h2>
+  <p>フォント: Inter + Noto Sans JP　／　純白＋鮮やかなブルー＋コーラルのアクセント</p>
+</div>
+<div class="mock C">
+  <div class="nav">
+    <div class="logo">TK-creative<span>CREATOR</span></div>
+    <div class="menu"><span>Services</span><span>Works</span><span>About</span><span class="cta">Contact</span></div>
+  </div>
+  <div class="hero">
+    <div class="tag">— バリ仕込みのクリエイター</div>
+    <div class="title">アイデアを、<br><em>形に。</em></div>
+    <div class="sub">テクノロジーとクリエイティブで、あなたのビジネスを前へ。AIアプリ開発・Web制作・ドローン映像まで一貫してお届けします。</div>
+    <div class="btns"><span class="btn solid">お仕事のご依頼</span><span class="btn ghost">実績を見る</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num">4+</div><div class="cap">バリ滞在年数</div></div>
+    <div class="stat"><div class="num">AI</div><div class="cap">アプリ開発</div></div>
+    <div class="stat"><div class="num">Web</div><div class="cap">LP制作</div></div>
+    <div class="stat"><div class="num">4K</div><div class="cap">ドローン映像</div></div>
+  </div>
+</div>
+
+</body>
+</html>
