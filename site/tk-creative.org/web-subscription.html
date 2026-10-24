@@ -9,14 +9,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
 <style>
-/* 2026-10-24 デザイン変更：机の上を上から見た構成。余白に切り抜き写真（Unsplash）を薄く置く */
+/* 2026-10-24 デザイン変更：余白にオフィス・在宅ワーク・ホームページが映る画面の写真（Unsplash）を薄く敷く */
 :root{
-  --paper:#EDEFEA;      /* 机の天板（やや緑みのグレー） */
-  --sheet:#FBFBF8;      /* 机に置いた紙 */
-  --mint:#D6E6DC;       /* 多肉の鉢の色からとった薄い緑 */
+  --paper:#EDEFEA;      /* 背景（やや緑みのグレー） */
+  --sheet:#FBFBF8;      /* 紙の白 */
+  --mint:#D6E6DC;       /* 薄い緑 */
   --ink:#1D2622;        /* 文字（緑みの黒） */
   --ink-2:#55615B;      /* 補足の文字 */
-  --leaf:#2F6B52;       /* 葉の緑（ボタン・強調） */
+  --leaf:#2F6B52;       /* 緑（ボタン・強調） */
   --leaf-d:#24543F;
   --line:rgba(29,38,34,.14);
 }
@@ -29,11 +29,18 @@ img{max-width:100%;height:auto;display:block}
 :focus-visible{outline:2px solid var(--leaf);outline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-/* 机の上に置いた物（切り抜き写真） */
-.obj{position:absolute;pointer-events:none;user-select:none;z-index:0;will-change:transform}
-.obj img{width:100%;filter:drop-shadow(18px 26px 22px rgba(29,38,34,.18))}
-.faint{opacity:.3}
-.faint img{filter:saturate(.7) drop-shadow(14px 20px 18px rgba(29,38,34,.12))}
+
+/* 背景の写真（Unsplash）：余白側に薄く敷き、本文側へ消えていく */
+.bgp{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;z-index:0;pointer-events:none}
+.bgp.r{right:0;-webkit-mask-image:linear-gradient(to left,#000 35%,transparent 100%),linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to left,#000 35%,transparent 100%),linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);mask-composite:intersect}
+.bgp.l{left:0;-webkit-mask-image:linear-gradient(to right,#000 35%,transparent 100%),linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,#000 35%,transparent 100%),linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);mask-composite:intersect}
+.bgp img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;opacity:.2;filter:saturate(.75);will-change:transform}
+#hero .bgp{width:58%}
+#hero .bgp img{opacity:1;filter:none}
+#hero .bgp.r{-webkit-mask-image:linear-gradient(to left,#000 55%,transparent 100%),linear-gradient(to bottom,#000 70%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to left,#000 55%,transparent 100%),linear-gradient(to bottom,#000 70%,transparent);mask-composite:intersect}
+.final .bgp{width:60%}
+.final .bgp img{opacity:.45;filter:saturate(.8)}
+@media(max-width:900px){.bgp{width:100%}.bgp.r,.bgp.l{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 25%,transparent 80%);mask-image:linear-gradient(to bottom,transparent,#000 25%,transparent 80%)}.bgp img{opacity:.12}#hero .bgp{width:100%;top:auto;height:46%;-webkit-mask-image:linear-gradient(to top,#000 40%,transparent);mask-image:linear-gradient(to top,#000 40%,transparent)}#hero .bgp img{opacity:.35}body #hero{padding-bottom:42vh}}
 
 /* NAV */
 #tk-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:12px;padding:16px 40px;background:rgba(237,239,234,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:padding .25s,box-shadow .25s}
@@ -64,8 +71,9 @@ body{line-break:strict}
 
 /* HERO */
 #hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:140px 0 96px;overflow:hidden}
-.hero-in{max-width:640px}
+.hero-in{max-width:600px}
 #hero .wrap{width:100%}
+@media(max-width:900px){.hero-in{max-width:none}}
 .hero-sub{font-weight:700;color:var(--leaf);font-size:.95rem;margin-bottom:22px}
 .hero-title{font-weight:900;font-size:clamp(2rem,4.4vw,3.8rem);line-height:1.22;letter-spacing:.01em;margin-bottom:28px}
 .hero-title .ln{display:inline-block}
@@ -78,19 +86,7 @@ body{line-break:strict}
 .pp-v small{font-size:.9rem;font-weight:500;margin-left:6px;color:var(--ink-2)}
 .pp-n{font-size:.78rem;color:var(--ink-2);margin-top:6px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-.o-monstera{right:-60px;top:12%;width:min(44vw,600px)}
-.o-notebook{right:24%;bottom:2%;width:min(26vw,330px);transform:rotate(-8deg)}
-.o-pen-h{right:36%;bottom:3%;width:min(8vw,100px);transform:rotate(-24deg)}
-@media(max-width:900px){.o-monstera{width:46vw;right:-14vw;top:auto;bottom:-40px;opacity:.32}.o-notebook,.o-pen-h{display:none}.hero-in{max-width:none}}
 @media(max-width:600px){.price-pair div{padding-right:22px;margin-right:22px}}
-/* 読み込み時の1回だけの動き：物が机の外から置かれる */
-@media(prefers-reduced-motion:no-preference){
-  .o-monstera img{animation:placeR 1.1s cubic-bezier(.2,.7,.2,1) both}
-  .o-notebook img{animation:placeB 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
-  .o-pen-h img{animation:placeB 1.1s .3s cubic-bezier(.2,.7,.2,1) both}
-}
-@keyframes placeR{from{translate:80px 0;opacity:0}}
-@keyframes placeB{from{translate:0 80px;opacity:0}}
 
 /* 制作例：机に並べたプリント */
 #samples{background:var(--paper)}
@@ -112,9 +108,6 @@ body{line-break:strict}
 .demo-name small{font-weight:400;font-size:.72rem;color:var(--ink-2);margin-left:4px}
 .demo-point{display:block;margin:8px 6px 0;font-size:.8rem;line-height:1.75;color:var(--ink-2)}
 .demo-note{margin-top:64px;font-size:.78rem;color:var(--ink-2);max-width:52em}
-.o-succ{left:-70px;top:80px;width:260px}
-.o-plant2{right:-90px;bottom:60px;width:280px}
-.o-pen{right:-30px;top:38%;width:170px;transform:rotate(18deg)}
 @media(max-width:900px){.demo-grid{grid-template-columns:1fr 1fr;gap:44px 24px}.demo-grid li .demo-card{margin-top:0!important}}
 @media(max-width:600px){.demo-grid{grid-template-columns:1fr}.demo-grid li .demo-card{rotate:0deg!important}}
 
@@ -126,7 +119,6 @@ body{line-break:strict}
 .inc-list li::before{content:"";position:absolute;left:0;top:.42em;width:18px;height:10px;border-left:2.5px solid var(--leaf);border-bottom:2.5px solid var(--leaf);rotate:-45deg}
 .inc-h{font-weight:700;font-size:1.05rem;margin-bottom:6px}
 .inc-p{font-size:.86rem;color:#3E4A44}
-.o-keyboard{left:-180px;bottom:-60px;width:420px;transform:rotate(14deg)}
 @media(max-width:700px){.inc-sheet{padding:44px 24px 40px;rotate:0deg}.inc-sheet>*{rotate:0deg}.inc-list{grid-template-columns:1fr;gap:28px}}
 
 /* つくり方 */
@@ -139,11 +131,6 @@ body{line-break:strict}
 .al li:last-child{border-bottom:1px solid var(--line)}
 .al-h{font-weight:700;font-size:1.12rem;margin-bottom:8px}
 .al-p{font-size:.9rem;color:var(--ink-2)}
-.o-plant{right:-110px;top:60px;width:320px}
-.o-notebook3{left:-120px;bottom:40px;width:340px;transform:rotate(-14deg)}
-.o-succ3{right:-60px;top:40px;width:220px}
-.o-pen3{left:-40px;bottom:80px;width:170px;transform:rotate(-30deg)}
-.o-keyboard2{right:-200px;bottom:20px;width:440px;transform:rotate(-12deg)}
 @media(max-width:860px){.approach{grid-template-columns:1fr;gap:28px}.approach .sticky{position:static}}
 
 /* 流れ（順番があるので番号をつける） */
@@ -166,7 +153,6 @@ body{line-break:strict}
 .ptable td{color:#3E4A44}
 .ptable .num{font-weight:900;color:var(--ink);font-size:1.05em}
 .pnote{margin-top:28px;font-size:.8rem;color:var(--ink-2)}
-.o-notebook2{right:-150px;top:60px;width:300px;transform:rotate(12deg)}
 @media(max-width:700px){.price-sheet{padding:28px 20px}.ptable th,.ptable td{display:block;width:auto;padding:0}.ptable th{padding-top:20px;margin-bottom:4px}.ptable td{padding-bottom:20px}}
 
 /* FAQ */
@@ -177,7 +163,6 @@ body{line-break:strict}
 .faq-q[aria-expanded="true"] .faq-icon{rotate:45deg;background:var(--ink);color:var(--sheet)}
 .faq-a{display:none;padding:0 48px 26px 0;font-size:.9rem;color:var(--ink-2)}
 .faq-q[aria-expanded="true"]+.faq-a{display:block}
-.o-succ2{left:-110px;bottom:40px;width:200px;transform:rotate(-10deg)}
 
 /* 最後の相談 */
 .final{position:relative;padding:150px 0 170px;overflow:hidden;background:var(--ink);color:var(--sheet)}
@@ -187,9 +172,6 @@ body{line-break:strict}
 .final .btn-primary:hover{background:#fff}
 .final-mail{display:inline-block;margin-top:22px;font-size:.88rem;color:rgba(251,251,248,.75);border-bottom:1px solid rgba(251,251,248,.3)}
 .final-mail:hover{color:#fff}
-.o-final{right:-40px;bottom:-60px;width:min(36vw,440px);opacity:.9}
-.o-final img{filter:drop-shadow(0 30px 30px rgba(0,0,0,.4))}
-@media(max-width:800px){.o-final{opacity:.25;width:60vw}}
 
 /* FOOTER */
 #tk-footer{padding:56px 40px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:20px 36px;font-size:.8rem;color:var(--ink-2)}
@@ -197,8 +179,6 @@ body{line-break:strict}
 .footer-nav{display:flex;flex-wrap:wrap;gap:8px 24px;margin-right:auto}
 .footer-nav a:hover{color:var(--ink)}
 
-/* 余白の物は狭い画面では消す（本文に重ならないように） */
-@media(max-width:1100px){.obj.faint{display:none}}
 
 /* 表示時の出方（1回だけ） */
 @media(prefers-reduced-motion:no-preference){
@@ -216,9 +196,7 @@ body{line-break:strict}
 
 <main>
 <section id="hero">
-  <div class="obj o-monstera" data-depth="-.06" aria-hidden="true"><img src="images/desk/monstera.webp" alt="" width="667" height="900"></div>
-  <div class="obj o-notebook" data-depth=".05" aria-hidden="true"><img src="images/desk/notebook.webp" alt="" width="900" height="679"></div>
-  <div class="obj o-pen-h" data-depth=".09" aria-hidden="true"><img src="images/desk/pen2.webp" alt="" width="610" height="701"></div>
+  <div class="bgp r" aria-hidden="true"><img src="images/scene/desk-website.webp" alt="" width="1500" height="1000" data-depth=".08"></div>
   <div class="wrap">
     <div class="hero-in">
       <p class="hero-sub">ホームページ制作・月額管理サービス</p>
@@ -237,9 +215,7 @@ body{line-break:strict}
 </section>
 
 <section class="sec" id="samples">
-  <div class="obj faint o-plant2" data-depth="-.08" aria-hidden="true"><img src="images/desk/plant.webp" alt="" width="730" height="900" loading="lazy"></div>
-  <div class="obj faint o-succ" data-depth="-.12" aria-hidden="true"><img src="images/desk/succulent.webp" alt="" width="524" height="813" loading="lazy"></div>
-  <div class="obj faint o-pen" data-depth=".1" aria-hidden="true"><img src="images/desk/pen2.webp" alt="" width="610" height="701" loading="lazy"></div>
+  <div class="bgp l" aria-hidden="true"><img src="images/scene/laptop-shop.webp" alt="" width="1500" height="905" loading="lazy" data-depth=".08"></div>
   <div class="wrap">
     <h2 class="sec-h reveal">制作例</h2>
     <p class="sec-lead reveal">業種ごとに作った制作例です。実際に動くサイトなので、スマートフォンでもそのままご覧いただけます。</p>
@@ -265,7 +241,7 @@ body{line-break:strict}
 </section>
 
 <section class="sec" id="included">
-  <div class="obj faint o-keyboard" data-depth=".08" aria-hidden="true"><img src="images/desk/keyboard.webp" alt="" width="900" height="600" loading="lazy"></div>
+  <div class="bgp r" aria-hidden="true"><img src="images/scene/office-view.webp" alt="" width="1125" height="1500" loading="lazy" data-depth=".08"></div>
   <div class="wrap">
     <div class="inc-sheet reveal">
       <h2 class="sec-h">月額に含まれるもの</h2>
@@ -283,8 +259,7 @@ body{line-break:strict}
 </section>
 
 <section class="sec" id="approach">
-  <div class="obj faint o-notebook3" data-depth=".08" aria-hidden="true"><img src="images/desk/notebook.webp" alt="" width="900" height="679" loading="lazy"></div>
-  <div class="obj faint o-plant" data-depth="-.1" aria-hidden="true"><img src="images/desk/plant.webp" alt="" width="730" height="900" loading="lazy"></div>
+  <div class="bgp l" aria-hidden="true"><img src="images/scene/meeting.webp" alt="" width="1500" height="1000" loading="lazy" data-depth=".08"></div>
   <div class="wrap approach">
     <div class="sticky">
       <h2 class="sec-h reveal">ひな形を使わず、<br>一社ずつつくる</h2>
@@ -300,7 +275,7 @@ body{line-break:strict}
 </section>
 
 <section class="sec" id="flow">
-  <div class="obj faint o-succ3" data-depth="-.1" aria-hidden="true"><img src="images/desk/succulent.webp" alt="" width="524" height="813" loading="lazy"></div>
+  <div class="bgp r" aria-hidden="true"><img src="images/scene/wood-desk.webp" alt="" width="1500" height="1000" loading="lazy" data-depth=".08"></div>
   <div class="wrap">
     <h2 class="sec-h reveal">公開までの流れ</h2>
     <p class="sec-lead reveal">ご相談から公開まで、オンラインで進めます。</p>
@@ -317,8 +292,7 @@ body{line-break:strict}
 </section>
 
 <section class="sec" id="price">
-  <div class="obj faint o-pen3" data-depth=".12" aria-hidden="true"><img src="images/desk/pen2.webp" alt="" width="610" height="701" loading="lazy"></div>
-  <div class="obj faint o-notebook2" data-depth=".1" aria-hidden="true"><img src="images/desk/notebook.webp" alt="" width="900" height="679" loading="lazy"></div>
+  <div class="bgp l" aria-hidden="true"><img src="images/scene/website-laptop.webp" alt="" width="1500" height="1000" loading="lazy" data-depth=".08"></div>
   <div class="wrap">
     <h2 class="sec-h reveal">料金と条件</h2>
     <p class="sec-lead reveal">表示価格は税別です。（ ）内は税込です。</p>
@@ -343,8 +317,7 @@ body{line-break:strict}
 </section>
 
 <section class="sec" id="faq">
-  <div class="obj faint o-keyboard2" data-depth=".08" aria-hidden="true"><img src="images/desk/keyboard.webp" alt="" width="900" height="600" loading="lazy"></div>
-  <div class="obj faint o-succ2" data-depth="-.08" aria-hidden="true"><img src="images/desk/succulent.webp" alt="" width="524" height="813" loading="lazy"></div>
+  <div class="bgp r" aria-hidden="true"><img src="images/scene/top-business.webp" alt="" width="1500" height="1002" loading="lazy" data-depth=".08"></div>
   <div class="wrap">
     <h2 class="sec-h reveal">よくある質問</h2>
     <div class="faq">
@@ -359,7 +332,7 @@ body{line-break:strict}
 </section>
 
 <section class="final">
-  <div class="obj o-final" data-depth="-.06" aria-hidden="true"><img src="images/desk/monstera.webp" alt="" width="667" height="900" loading="lazy"></div>
+  <div class="bgp r" aria-hidden="true"><img src="images/scene/night-office.webp" alt="" width="1500" height="1000" loading="lazy" data-depth=".08"></div>
   <div class="wrap">
     <h2 class="final-h reveal">まずは、いまの<br>ホームページの悩みから。</h2>
     <p class="final-p reveal">新しく作りたい方も、今のサイトを作り直したい方も、まずはお気軽にご相談ください。</p>
@@ -382,8 +355,8 @@ body{line-break:strict}
 (function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(el){el.classList.add('revealed')});return}var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target)}})},{threshold:.04,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){io.observe(el)})})();
 (function(){document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var open=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(function(o){o.setAttribute('aria-expanded','false')});if(!open){this.setAttribute('aria-expanded','true')}})})})();
 (function(){var box=document.querySelector('[data-demo-filters]');if(!box)return;box.hidden=false;var items=document.querySelectorAll('.demo-grid li');var status=document.querySelector('[data-demo-status]');box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var f=b.getAttribute('data-filter');box.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});var n=0;items.forEach(function(it){var show=f==='all'||it.getAttribute('data-industry')===f;it.hidden=!show;if(show)n++});if(status)status.textContent=(f==='all'?'すべての業種':b.textContent)+'の制作例を'+n+'件表示しています。'})})();
-/* 余白の物をスクロールに合わせてゆっくり動かす */
-(function(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var objs=[].slice.call(document.querySelectorAll('.obj[data-depth]'));var tick=false;function upd(){var vh=window.innerHeight;objs.forEach(function(o){var r=o.parentNode.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)return;var d=parseFloat(o.dataset.depth);o.style.translate='0 '+((r.top+r.height/2-vh/2)*d).toFixed(1)+'px'});tick=false}window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd()})();
+/* 背景の写真をスクロールに合わせてゆっくり動かす */
+(function(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var objs=[].slice.call(document.querySelectorAll('.bgp img[data-depth]'));var tick=false;function upd(){var vh=window.innerHeight;objs.forEach(function(o){var r=o.parentNode.parentNode.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)return;var d=parseFloat(o.dataset.depth);o.style.translate='0 '+((r.top+r.height/2-vh/2)*d).toFixed(1)+'px'});tick=false}window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd()})();
 </script>
 </body>
 </html>
