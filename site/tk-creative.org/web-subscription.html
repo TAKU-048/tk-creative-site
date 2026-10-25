@@ -122,6 +122,16 @@ body{line-break:strict}
 .q-note{font-size:.75rem;color:var(--ink-2);margin-top:10px}
 @media(max-width:600px){.quiz-box{padding:26px 18px 22px;margin-top:-120px;border-radius:14px}.q-opts.two{grid-template-columns:1fr}}
 
+/* こんなお悩み */
+.worry{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px;margin:44px auto 0}
+.worry li{display:flex;align-items:center;gap:14px;background:#fff;border-radius:12px;padding:18px 20px;box-shadow:0 0 0 1px var(--line);font-weight:700;font-size:1rem;line-height:1.6;text-align:left}
+.worry li::before{content:"";flex:none;width:26px;height:26px;border-radius:6px;background-position:center;background-repeat:no-repeat;background-size:16px,100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E"),var(--grad)}
+.worry li:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 7px)}
+.worry-arrow{width:0;height:0;margin:44px auto 26px;border-left:34px solid transparent;border-right:34px solid transparent;border-top:24px solid var(--red)}
+.worry-ans{font-weight:900;font-size:clamp(1.25rem,2.6vw,1.75rem);line-height:1.6}
+.worry-ans em{font-style:normal;color:var(--red)}
+@media(max-width:700px){.worry{grid-template-columns:1fr}.worry li:last-child:nth-child(odd){width:auto;justify-self:stretch}}
+
 /* 写真と文章 */
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .intro img{border-radius:14px;box-shadow:0 24px 40px -24px rgba(0,0,0,.4)}
@@ -320,6 +330,22 @@ body{line-break:strict}
         <p>内容を確認し、2営業日以内にメールでご連絡します。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="sec sec-gray" id="worries">
+  <div class="wrap center">
+    <span class="tag">こんなお悩み、ありませんか？</span>
+    <h2 class="h2">ホームページのことで、<br><em>こんなお悩み</em>はありませんか？</h2>
+    <ul class="worry">
+      <li>ホームページを作ったが、何年も更新せずに放置している</li>
+      <li>更新したいが、そこまで手が回らない</li>
+      <li>一度は頼んだものの、修正のたびにお金がかかるので放置している</li>
+      <li>作った人と連絡が取れないなどの理由で、そのままになっている</li>
+      <li>ドメインの取得やサーバーの契約が面倒</li>
+    </ul>
+    <div class="worry-arrow" aria-hidden="true"></div>
+    <p class="worry-ans">そのお悩み、<br><em>月額ホームページにお任せください。</em></p>
   </div>
 </section>
 
