@@ -1,0 +1,9 @@
+# 2026-10-26 ブラウザ向けの安全設定（Cloudflare Workers の静的ファイルに付く）
+# トップURL（/）と404は worker.js で同じ設定を付ける
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: frame-ancestors 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formspree.io; upgrade-insecure-requests
