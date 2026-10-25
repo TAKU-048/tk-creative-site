@@ -59,11 +59,28 @@ body{line-break:strict}
 #tk-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:12px;padding:12px 28px;background:rgba(255,255,255,.96);box-shadow:0 1px 0 var(--line)}
 .nav-logo{margin-right:auto;display:flex;align-items:center;min-height:44px}
 .nav-logo img{width:80px;filter:brightness(0)}
-.nav-back{font-size:.85rem;font-weight:500;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;color:var(--ink-2)}
-.nav-back:hover{color:var(--ink)}
-.nav-soft{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:8px;font-size:.82rem;font-weight:700;background:#fff;box-shadow:inset 0 0 0 1px var(--line),0 2px 6px rgba(0,0,0,.06)}
+/* トップページと同じサービスメニュー */
+.svc-menu{list-style:none;display:flex;align-items:center;gap:2px;margin-right:8px}
+.svc-menu a{display:inline-flex;align-items:center;min-height:44px;padding:0 11px;font-size:.84rem;font-weight:700;color:var(--ink-2);white-space:nowrap;border-radius:8px}
+.svc-menu a:hover{color:var(--ink);background:var(--gray)}
+.svc-menu a[aria-current="page"]{color:var(--red)}
+.svc-menu-btn{display:none;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:8px;font-size:.84rem;font-weight:700;box-shadow:inset 0 0 0 1px var(--line)}
+.svc-menu-bars,.svc-menu-bars::before,.svc-menu-bars::after{display:block;width:16px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .2s,opacity .2s}
+.svc-menu-bars::before,.svc-menu-bars::after{content:"";position:absolute;left:0}
+.svc-menu-bars::before{top:-5px}.svc-menu-bars::after{top:5px}
+.svc-menu-btn[aria-expanded="true"] .svc-menu-bars{background:transparent}
+.svc-menu-btn[aria-expanded="true"] .svc-menu-bars::before{transform:translateY(5px) rotate(45deg)}
+.svc-menu-btn[aria-expanded="true"] .svc-menu-bars::after{transform:translateY(-5px) rotate(-45deg)}
+@media(max-width:1180px){
+  .svc-menu-btn{display:inline-flex;order:2}
+  .nav-red{order:1}
+  .svc-menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;background:#fff;box-shadow:0 12px 24px -12px rgba(0,0,0,.25),0 -1px 0 var(--line) inset;padding:8px 16px 16px}
+  .svc-menu.open{display:flex}
+  .svc-menu a{width:100%;min-height:50px;padding:0 8px;font-size:.95rem;border-bottom:1px solid var(--line);border-radius:0}
+}
 .nav-red{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:8px;font-size:.82rem;font-weight:700;color:#fff;background:var(--grad);box-shadow:0 6px 14px -8px rgba(227,64,43,.9)}
-@media(max-width:760px){.nav-soft,.nav-back .long{display:none}#tk-nav{padding:10px 14px}.nav-logo img{width:66px}}
+@media(max-width:760px){#tk-nav{padding:10px 14px}.nav-logo img{width:66px}}
+@media(max-width:420px){.nav-red{font-size:.74rem;padding:0 10px}.svc-menu-btn{padding:0 10px}}
 
 /* ヒーロー：上に写真、下に深い赤の帯 */
 #hero{padding-top:68px;position:relative}
@@ -241,8 +258,17 @@ body{line-break:strict}
 <body>
 <nav id="tk-nav">
   <a class="nav-logo" href="preview.html" aria-label="TK-creative トップページ"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></a>
-  <a class="nav-back" href="preview.html">トップ<span class="long">に戻る</span></a>
-  <a class="nav-soft" href="contact.html?service=web-subscription">相談する</a>
+  <button class="svc-menu-btn" type="button" aria-expanded="false" aria-controls="svc-menu"><span class="svc-menu-bars" aria-hidden="true"></span>メニュー</button>
+  <ul class="svc-menu" id="svc-menu">
+    <li><a href="preview.html">トップ</a></li>
+    <li><a href="web-subscription.html" aria-current="page">ホームページ制作</a></li>
+    <li><a href="drone-filming.html">撮影依頼</a></li>
+    <li><a href="surf-school-drone.html">サーフスクール導入</a></li>
+    <li><a href="service-ai.html">AI業務効率化</a></li>
+    <li><a href="onepost.html">ONEPOST</a></li>
+    <li><a href="pricing.html">料金</a></li>
+    <li><a href="contact.html?service=web-subscription">お問い合わせ</a></li>
+  </ul>
   <a class="nav-red" href="#free">【無料】構成案を受け取る</a>
 </nav>
 
@@ -515,6 +541,7 @@ body{line-break:strict}
 </footer>
 
 <script>
+(function(){var b=document.querySelector('.svc-menu-btn'),m=document.getElementById('svc-menu');if(!b||!m)return;function set(o){b.setAttribute('aria-expanded',String(o));m.classList.toggle('open',o)}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true')});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})})();
 (function(){document.querySelectorAll('.faq-q').forEach(function(b){b.addEventListener('click',function(){var open=this.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(function(o){o.setAttribute('aria-expanded','false')});if(!open){this.setAttribute('aria-expanded','true')}})})})();
 (function(){var box=document.querySelector('[data-demo-filters]');if(!box)return;box.hidden=false;var items=document.querySelectorAll('.demo-grid li');var status=document.querySelector('[data-demo-status]');box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var f=b.getAttribute('data-filter');box.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});var n=0;items.forEach(function(it){var show=f==='all'||it.getAttribute('data-industry')===f;it.hidden=!show;if(show)n++});if(status)status.textContent=(f==='all'?'すべての業種':b.textContent)+'の制作例を'+n+'件表示しています。'})})();
 /* 無料の構成案：4つの質問 */
