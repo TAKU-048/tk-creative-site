@@ -149,6 +149,21 @@ body{line-break:strict}
 .worry-ans em{font-style:normal;color:var(--red)}
 @media(max-width:700px){.worry{grid-template-columns:1fr}.worry li:last-child:nth-child(odd){width:auto;justify-self:stretch}}
 
+/* ONEPOSTとのセット（2026-11-01 追加） */
+.op-set{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.op-set img{border-radius:14px;box-shadow:0 24px 40px -24px rgba(0,0,0,.6)}
+.op-set .h2{margin-bottom:22px}
+.op-set p{color:rgba(255,255,255,.85);line-height:2}
+.op-set .op-note{margin-top:18px;font-size:.8rem;color:rgba(255,255,255,.62);line-height:1.9}
+.op-set .op-link{display:inline-block;margin-top:22px;font-weight:700;font-size:.9rem;color:#fff;border-bottom:2px solid var(--red);padding-bottom:2px}
+@media(max-width:820px){.op-set{grid-template-columns:1fr;gap:30px}}
+.ph-set{margin-top:26px;padding:20px 22px;border-radius:12px;background:#fff;box-shadow:0 0 0 2px var(--red)}
+.ph-set-t{font-weight:900;font-size:1rem}
+.ph-set-p{margin-top:4px;font-weight:900;font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.4}
+.ph-set-p em{font-style:normal;color:var(--red)}
+.ph-set-p small{font-size:.55em;margin-left:4px}
+.ph-set-d{margin-top:8px;font-size:.84rem;color:var(--ink-2);line-height:1.85}
+
 /* 写真と文章 */
 .intro{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .intro img{border-radius:14px;box-shadow:0 24px 40px -24px rgba(0,0,0,.4)}
@@ -439,6 +454,11 @@ body{line-break:strict}
         <li>最低利用期間は公開日から12か月です。以降は1か月ごとの自動更新です。</li>
         <li>最大5ページ＋プライバシーポリシー1ページ。ページの追加は1ページ20,000円（税別）の一回払いです。</li>
       </ul>
+      <div class="ph-set">
+        <p class="ph-set-t">ホームページ＋SNSセット</p>
+        <p class="ph-set-p">月額 <em>13,540円</em><small>（税込）</small></p>
+        <p class="ph-set-d">ホームページ制作と、SNS一括投稿「ONEPOST」のセットです。内訳：ホームページ制作 9,600円（税別）＋ ONEPOST 2,980円（税込）。最低利用期間はホームページ制作プランと同じ12か月です。</p>
+      </div>
     </div>
   </div>
   <div class="wrap center" style="margin-top:96px">
@@ -457,6 +477,18 @@ body{line-break:strict}
   </div>
 </section>
 
+<section class="sec dark" id="onepost-set">
+  <div class="wrap op-set">
+    <img src="images/onepost/hero.webp" alt="SNS一括投稿サービス ONEPOST の画面" width="1600" height="848" loading="lazy">
+    <div>
+      <span class="tag">ONEPOST とのセット</span>
+      <h2 class="h2">公開したあとの<br>「発信」まで、セットで。</h2>
+      <p>ホームページは、見てもらえなければ意味がありません。SNS一括投稿サービス「ONEPOST」を組み合わせると、Instagram・Googleビジネスプロフィール・TikTokなど6媒体への投稿を、ひとつの画面からまとめて予約・投稿できます。作る場所と、知ってもらう場所を、ひとつの契約で。</p>
+      <p class="op-note">セット月額13,540円（税込）＝ ホームページ制作 9,600円（税別）＋ ONEPOST 2,980円（税込）。ONEPOST の AI オプション（月額+1,980円・税込）も追加できます。</p>
+    </div>
+  </div>
+</section>
+
 <section class="sec sec-gray" id="price">
   <div class="wrap center">
     <span class="tag">料金と条件</span>
@@ -468,6 +500,7 @@ body{line-break:strict}
         <tbody>
           <tr><th scope="row">初期制作費</th><td><span class="num">0円</span></td></tr>
           <tr><th scope="row">月額料金</th><td><span class="num">9,600円</span>（10,560円）<br>クレジットカードによる毎月の自動決済です。初月は公開日から月末までの日割り、翌月以降は毎月月初に当月分をお支払いいただきます。</td></tr>
+          <tr><th scope="row">セットプラン月額料金</th><td><span class="num">13,540円</span>（税込）。ホームページ制作 9,600円（税別）と ONEPOST 2,980円（税込）の合計です。お支払い方法・最低利用期間・解約の条件は、ホームページ制作プランの条件に準じます。</td></tr>
           <tr><th scope="row">ページの追加</th><td>通常ページ1ページにつき <span class="num">20,000円</span>（22,000円）の一回払い。月額は変わりません。</td></tr>
           <tr><th scope="row">掲載量の目安</th><td>トップページは最大8セクション、その他のページは1ページ最大5セクションです。商品や実績を多数掲載する場合は、件数を着手前にご相談します。</td></tr>
           <tr><th scope="row">別途お見積もり</th><td>新しい原稿の作成、構成の変更、機能・ページの追加、長いLP・特殊な機能、ファイル添付・決済機能、ロゴ制作、本格的な画像加工、取材を伴う原稿作成。着手前にお見積もりします。</td></tr>
@@ -516,6 +549,7 @@ body{line-break:strict}
         <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>今使っているドメインやメールはそのまま使えますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">既存のドメインもご利用いただけます。独自ドメインのメールボックスはオプションで、お客様がメールサービスと直接ご契約いただく形です。希望される場合の初期設定代行は基本の制作に含みます。</div></div>
         <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>自分でホームページを編集できますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">お客様用の編集画面はありません。変更したい内容をご連絡いただければ、月2回までこちらで反映します。</div></div>
         <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>解約したらホームページはどうなりますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">契約終了で当方での公開・保守・フォームの運用を終了します。移転の日程は事前に調整します。12か月分のお支払いが完了していれば、サイトのソース・画像・公開手順をお渡しし、ドメインの移管にも対応します。</div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>SNSへの投稿もまとめてお願いできますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">はい。SNS一括投稿サービス「ONEPOST」とのセットメニュー（月額13,540円・税込）をご用意しています。Instagram・Facebook・Googleビジネスプロフィール・TikTok・YouTube Shorts・Pinterest の6媒体へ、ひとつの画面からまとめて投稿・予約ができます。ホームページの公開後の発信まで、ひとつの契約でまかなえます。ONEPOST 単体（月額2,980円・税込）でのご利用は招待制です。</div></div>
       </div>
   </div>
 </section>
