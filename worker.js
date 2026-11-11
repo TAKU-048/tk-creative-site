@@ -57,6 +57,14 @@ export default {
     if (url.pathname === "/") {
       return withSecurityHeaders(await env.ASSETS.fetch(new Request(new URL("/index.html", url), request)));
     }
+    // 2026-11-11 ブログ：/blog/ のようにフォルダで終わるURLは、その中の index.html を返す
+    if (url.pathname.endsWith("/")) {
+      const res = await env.ASSETS.fetch(new Request(new URL(url.pathname + "index.html", url), request));
+      if (res.status !== 404) return withSecurityHeaders(res);
+    }
+    if (url.pathname === "/blog") {
+      return Response.redirect(new URL("/blog/", url).toString(), 301);
+    }
     return withSecurityHeaders(new Response("Not Found", {
       status: 404,
       headers: { "content-type": "text/plain; charset=utf-8" },

@@ -149,6 +149,19 @@ body{line-break:strict}
 .worry-ans em{font-style:normal;color:var(--red)}
 @media(max-width:700px){.worry{grid-template-columns:1fr}.worry li:last-child:nth-child(odd){width:auto;justify-self:stretch}}
 
+/* ご紹介（2026-11-11 追加） */
+.ref{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+.ref-c{background:#fff;border-radius:16px;padding:32px 28px;box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column}
+.ref-c.hl{box-shadow:0 0 0 2px var(--red)}
+.ref-k{font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--red)}
+.ref-c h3{font-weight:900;font-size:1.2rem;margin-top:6px}
+.ref-c .ref-big{font-weight:900;font-size:clamp(1.5rem,3vw,2rem);line-height:1.35;margin-top:14px;color:var(--ink)}
+.ref-big em{font-style:normal;color:var(--red)}
+.ref-c p{font-size:.88rem;color:var(--ink-2);line-height:1.9;margin-top:12px}
+.ref-c .ref-link{margin-top:auto;padding-top:18px;font-weight:700;font-size:.9rem;color:var(--red)}
+.ref-c .ref-link span{border-bottom:2px solid var(--red)}
+@media(max-width:820px){.ref{grid-template-columns:1fr}}
+
 /* セキュリティ（2026-11-04 追加） */
 .sec-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:48px auto 0;max-width:980px;background:#121212;color:#fff;border-radius:16px;overflow:hidden}
 .sec-stat div{padding:30px 26px;border-left:1px solid rgba(255,255,255,.12)}
@@ -568,6 +581,30 @@ body{line-break:strict}
   </div>
 </section>
 
+<section class="sec" id="referral">
+  <div class="wrap center">
+    <span class="tag">ご紹介について</span>
+    <h2 class="h2">ご紹介いただいた方に、<br><em>お礼</em>をお渡しします。</h2>
+  </div>
+  <div class="wrap">
+    <div class="ref">
+      <div class="ref-c hl">
+        <span class="ref-k">ご契約中のお客様へ</span>
+        <h3>お客様の紹介特典</h3>
+        <p class="ref-big">月額料金が<br><em>1か月無料</em></p>
+        <p>ご契約中のお客様が別のお店をご紹介くださり、そのお店がご契約された場合に、ご紹介いただいたお客様の月額料金を1か月分無料にします。お申し込みの際、紹介されたお店に「紹介者の名前」の欄へお名前を書いていただくだけです。なお、紹介されたお店への特典はありません。</p>
+      </div>
+      <div class="ref-c">
+        <span class="ref-k">お店や会社と関わるお仕事の方へ</span>
+        <h3>紹介パートナー制度</h3>
+        <p class="ref-big">契約が続く間、毎月<br><em>月額料金の10%</em></p>
+        <p>ご紹介で契約したお店の契約が続く間、毎月そのお店のホームページ制作の月額料金の10%を紹介料としてお支払いします。ONEPOSTのSNS一括投稿など、追加のサブスクリプションの料金は含みません。</p>
+        <a class="ref-link" href="referral-partner.html"><span>紹介パートナー制度の詳細</span> →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec sec-gray" id="faq">
   <div class="wrap center">
     <span class="tag">よくある質問</span>
@@ -591,6 +628,8 @@ body{line-break:strict}
         <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>今使っているドメインやメールはそのまま使えますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">既存のドメインもご利用いただけます。今お使いのメールは、設定を変えずに引き継ぐので、そのまま使えます（ただし、今のサーバーでメールをお使いの場合、そのサーバーを解約するとメールも止まります。解約の前にご相談ください）。新しく独自ドメインのメールボックスを使う場合はオプションで、お客様がメールサービスと直接ご契約いただく形です。希望される場合の初期設定代行は基本の制作に含みます。</div></div>
         <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>自分でホームページを編集できますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">基本のプランには、お客様用の編集画面はありません。変更したい内容をご連絡いただければ、月2回までこちらで反映します。お知らせ・ブログなどの記事をご自身で書きたい場合は、記事編集オプション（月額800円（税別）・初期費用0円）で、記事を書いて公開できる編集画面をお渡しします。</div></div>
         <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>解約したらホームページはどうなりますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">契約終了で当方での公開・保守・フォームの運用を終了します。移転の日程は事前に調整します。12か月分のお支払いが完了していれば、サイトのソース・画像・公開手順をお渡しし、ドメインの移管にも対応します。記事編集オプションをご利用の場合にお渡しするのは、記事・画像のデータとドメインの移管です。</div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>知り合いのお店を紹介すると、特典はありますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">ご契約中のお客様が別のお店をご紹介くださり、そのお店がご契約された場合に、ご紹介いただいたお客様の月額料金を1か月分無料にします。紹介されたお店がお問い合わせの際に「紹介者の名前」の欄へお客様のお名前を書いていただくと、ご紹介として確認できます。紹介されたお店への特典はありません。</div></div>
+        <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>お客様ではありませんが、お店を紹介することはできますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">はい。紹介パートナー制度があります。ご紹介で契約したお店の契約が続く間、毎月そのお店のホームページ制作の月額料金の10%を紹介料としてお支払いします（ONEPOSTなど追加のサブスクリプションの料金は含みません）。詳しくは<a href="referral-partner.html" style="text-decoration:underline">紹介パートナー制度</a>のページをご覧ください。</div></div>
         <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span>SNSへの投稿もまとめてお願いできますか？</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-a">はい。SNS一括投稿サービス「ONEPOST」とのセットメニュー（月額13,540円・税込）をご用意しています。Instagram・Facebook・Googleビジネスプロフィール・TikTok・YouTube Shorts・Pinterest の6媒体へ、ひとつの画面からまとめて投稿・予約ができます。ホームページの公開後の発信まで、ひとつの契約でまかなえます。ONEPOST 単体（月額2,980円・税込）でのご利用は招待制です。</div></div>
       </div>
   </div>
@@ -609,7 +648,7 @@ body{line-break:strict}
 
 <footer id="tk-footer">
   <div class="footer-logo"><img src="tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></div>
-  <nav class="footer-nav"><a href="preview.html">トップに戻る</a><a href="pricing.html">料金を見る</a><a href="web-terms.html">利用規約</a><a href="tokushoho.html">特定商取引法に基づく表記</a><a href="contact.html">お問い合わせ</a></nav>
+  <nav class="footer-nav"><a href="preview.html">トップに戻る</a><a href="pricing.html">料金を見る</a><a href="web-terms.html">利用規約</a><a href="tokushoho.html">特定商取引法に基づく表記</a><a href="blog/">ブログ</a><a href="referral-partner.html">紹介パートナー制度</a><a href="contact.html">お問い合わせ</a></nav>
   <p class="footer-copy">&copy; 2026 TK-creative. All rights reserved.</p>
 </footer>
 

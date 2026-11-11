@@ -278,6 +278,10 @@ a{color:inherit;text-decoration:none;}
           <option value="undecided">未定・相談したい</option>
         </select>
       </div>
+      <div class="form-group" id="referrer-group" hidden>
+        <label for="referrer">紹介者の名前</label>
+        <input type="text" id="referrer" name="referrer" placeholder="紹介を受けた方のお名前（会社名・屋号でも可。任意）">
+      </div>
       <div class="form-group">
         <label for="message">お問い合わせ内容 *</label>
         <textarea id="message" name="message" placeholder="撮影場所・日程・用途など、詳細をお書きください。" required></textarea>
@@ -360,7 +364,8 @@ a{color:inherit;text-decoration:none;}
   var budgetGroup=document.getElementById('budget-group');
   var message=document.getElementById('message');
   var defaultPh=message?message.placeholder:'';
-  function syncCategory(){var sub=category&&category.value==='web-subscription';if(budgetGroup)budgetGroup.hidden=sub;if(message)message.placeholder=sub?'業種、作りたいホームページの目的（集客・採用など）、今のホームページの有無やURLなどをお書きください。':defaultPh;}
+  var referrerGroup=document.getElementById('referrer-group');
+  function syncCategory(){var sub=category&&category.value==='web-subscription';if(budgetGroup)budgetGroup.hidden=sub;if(referrerGroup)referrerGroup.hidden=!sub;if(message)message.placeholder=sub?'業種、作りたいホームページの目的（集客・採用など）、今のホームページの有無やURLなどをお書きください。':defaultPh;}
   if(category){category.addEventListener('change',syncCategory);syncCategory();}
   form.addEventListener('submit',function(e){
     e.preventDefault();
