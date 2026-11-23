@@ -1,4 +1,4 @@
-/* TK-creative. 紹介パートナー・ブログ共通（web-subscription.html と同じ見た目）2026-11-11 */
+/* TK-creative. ブログ共通（web-subscription.html と同じ見た目）2026-11-11 */
 :root{
   --red:#E3402B;
   --orange:#F0793A;
@@ -88,7 +88,7 @@ body{line-break:strict}
 .footer-nav{display:flex;flex-wrap:wrap;gap:8px 22px;margin-right:auto}
 .footer-nav a:hover{color:var(--ink)}
 
-/* ===== 紹介パートナー・ブログ用（2026-11-11 追加） ===== */
+/* ===== ブログ用（2026-11-11 追加） ===== */
 main{padding-top:70px}
 .ph{background:radial-gradient(120% 140% at 50% 0%,#6B161A 0%,var(--maroon) 50%,#170708 100%);color:#fff;padding:96px 0 84px}
 .ph .tag{margin-bottom:16px}

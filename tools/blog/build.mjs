@@ -65,7 +65,7 @@ const nav = (prefix) => `<nav id="tk-nav">
 </nav>`;
 const foot = (prefix) => `<footer id="tk-footer">
   <div class="footer-logo"><img src="${prefix}tk-creative-logo-v2.png" alt="TK-creative" width="240" height="193"></div>
-  <nav class="footer-nav"><a href="${prefix}preview.html">トップに戻る</a><a href="${prefix}web-subscription.html">月額ホームページ制作</a><a href="${prefix}blog/">ブログ</a><a href="${prefix}referral-partner.html">紹介パートナー制度</a><a href="${prefix}contact.html">お問い合わせ</a></nav>
+  <nav class="footer-nav"><a href="${prefix}preview.html">トップに戻る</a><a href="${prefix}web-subscription.html">月額ホームページ制作</a><a href="${prefix}blog/">ブログ</a><a href="${prefix}contact.html">お問い合わせ</a></nav>
   <p class="footer-copy">&copy; 2026 TK-creative. All rights reserved.</p>
 </footer>
 <script>(function(){var b=document.querySelector('.svc-menu-btn'),m=document.getElementById('svc-menu');if(!b||!m)return;function set(o){b.setAttribute('aria-expanded',String(o));m.classList.toggle('open',o)}b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true')});m.addEventListener('click',function(e){if(e.target.closest('a'))set(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})})();</script>`;
