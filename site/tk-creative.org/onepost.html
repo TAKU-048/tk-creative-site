@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ONEPOST — Googleマップ最適化 おまかせプラン | TK-creative.</title>
-<meta name="description" content="Googleマップの集客を、まるごと任せられる「おまかせプラン」。順位の計測から、プロフィールの整備、毎月のクチコミ返信・投稿・順位を見た改善・月次報告までをTK-creativeが行います。月額15,760円（税込）・初回整備0円。ご自身で投稿するSNS一括投稿ツール（月額2,980円）は別のサービスです。">
+<meta name="description" content="Googleマップの集客を、まるごと任せられる「おまかせプラン」。順位の計測から、プロフィールの整備、毎月のクチコミ返信・投稿・順位を見た改善・月次報告までをTK-creativeが行います。月額15,760円（税込）・初回整備0円・最低利用期間6か月。ご自身で投稿するSNS一括投稿ツール（月額2,980円）は別のサービスです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -233,6 +233,11 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:28px 0;font-siz
 .plan-note{margin-top:20px;font-size:.88rem;color:var(--sub)}
 .plan-note a{color:var(--red-text);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){.plans{padding-top:64px}.plan{grid-template-columns:auto minmax(0,1fr);align-items:start;gap:14px 14px;padding:22px 18px}.plan-no{width:34px;height:34px;font-size:1rem}.plan h3{font-size:1.15rem;line-height:1.45}.plan-price{grid-column:1/-1}}
+.plan-solo{grid-template-columns:minmax(0,1fr) minmax(0,240px)}
+.plan-terms{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.plan-terms li{font-weight:700;font-size:.9rem;padding:4px 12px;border:1px solid rgba(245,240,232,.45);border-radius:999px}
+.end .end-sub{margin:40px auto 0;max-width:36em;font-size:.85rem;padding-top:20px;border-top:1px solid var(--line)}
+@media(max-width:760px){.plan-solo{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -260,7 +265,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:28px 0;font-siz
       <p class="logo-op" style="font-size:1.1rem">ONE<span>POST</span></p>
       <h1>Googleマップの集客を、<br><span style="color:var(--red)">まるごと任せる。</span></h1>
       <p class="hero-lead">おまかせプランは、Googleマップの順位の計測から、お店のプロフィールの整備、毎月のクチコミ返信・投稿・順位を見た改善までを、TK-creativeが代わりに行うサービスです。</p>
-      <p class="price-hero"><small style="color:var(--ink)">おまかせプラン</small><b>月額15,760円</b><small>（税込）／初回整備 0円</small></p>
+      <p class="price-hero"><small style="color:var(--ink)">おまかせプラン</small><b>月額15,760円</b><small>（税込）／初回整備 0円／最低利用期間 6か月</small></p>
       <div class="actions">
         <a class="btn btn-red" href="https://oneposts.club/" target="_blank" rel="noopener">くわしくはONEPOST公式サイトへ</a>
         <a class="btn btn-line" href="#plans">料金を見る</a>
@@ -275,18 +280,11 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:28px 0;font-siz
 <section class="plans" id="plans">
   <div class="wrap">
     <h2>料金</h2>
-    <ol class="plan-list">
-      <li class="plan plan-main">
-        <span class="plan-no">1</span>
-        <div><h3>おまかせプラン（Googleマップ最適化）</h3><p>Googleマップの順位の計測（お店のまわり25か所・週1回、競合店との比較、クチコミ分析）と、初回整備（カテゴリ・営業時間・メニュー・説明文・写真など）、毎月のクチコミ返信・Googleビジネスプロフィールへの投稿（月2回）・順位を見た改善・月次報告書。最低利用期間6か月。お店には月1回、写真などの素材を共有していただきます。</p></div>
-        <p class="plan-price"><b>月額15,760円</b><small>税込／初回整備0円</small></p>
-      </li>
-      <li class="plan">
-        <span class="plan-no">別</span>
-        <div><h3>SNS一括投稿（別のサービス）</h3><p>お客様ご自身で投稿するためのツールです。6つのSNSへの一括投稿・予約投稿・AIの投稿文。SNSの投稿を代わりに行うサービスではなく、おまかせプランには含まれません。</p></div>
-        <p class="plan-price"><b>月額2,980円</b><small>税込</small></p>
-      </li>
-    </ol>
+    <div class="plan plan-main plan-solo">
+      <div><h3>おまかせプラン（Googleマップ最適化）</h3><p>Googleマップの順位の計測（お店のまわり25か所・週1回、競合店との比較、クチコミ分析）と、初回整備（カテゴリ・営業時間・メニュー・説明文・写真など）、毎月のクチコミ返信・Googleビジネスプロフィールへの投稿（月2回）・順位を見た改善・月次報告書。お店には月1回、写真などの素材を共有していただきます。</p>
+        <ul class="plan-terms"><li>初回整備 0円</li><li>最低利用期間 6か月</li></ul></div>
+      <p class="plan-price"><b>月額15,760円</b><small>税込</small></p>
+    </div>
     <p class="plan-note">Googleマップの順位が上がることを保証するものではありません。料金・条件のくわしい内容とお申し込みは、ONEPOST公式サイトをご覧ください。</p>
   </div>
 </section>
@@ -294,40 +292,40 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:28px 0;font-siz
 <section class="tour" id="tour">
   <div class="wrap">
     <div class="tour-head">
-      <h2>SNS一括投稿の画面<br><small style="font-size:.55em;color:var(--sub)">（別のサービス）</small></h2>
-      <p>お客様ご自身で投稿するツールの、本物の操作画面です。</p>
+      <h2>おまかせプランで、<br>私たちがやること。</h2>
+      <p>初回整備のあとは、毎月この4つをTK-creativeが行います。画面は実際の管理画面です（サンプル店舗）。</p>
     </div>
     <div class="tour-grid">
       <div class="stage" aria-hidden="true">
-        <div class="screen on" data-i="0"><div class="browser"><img src="images/onepost/post.webp" alt="" width="681" height="1294"><span class="mark" style="left:4%;top:41%;width:92%;height:57%"><em>投稿先を選ぶ</em></span></div></div>
-        <div class="screen wide" data-i="1"><div class="browser"><img src="images/onepost/ai.webp" alt="" width="2181" height="810"><span class="mark" style="left:34%;top:14%;width:65%;height:38%"><em>ここに文章案が出る</em></span></div></div>
-        <div class="screen" data-i="2"><div class="browser"><img src="images/onepost/cal.webp" alt="" width="681" height="1418"><span class="mark below" style="left:5%;top:13%;width:90%;height:76%"><em>予約をカレンダーで確認</em></span></div></div>
-        <div class="screen" data-i="3"><div class="browser"><img src="images/onepost/sns.webp" alt="" width="880" height="1145"><span class="mark below" style="left:5%;top:12%;width:90%;height:74%"><em>SNSごとに連携</em></span></div></div>
+        <div class="screen on" data-i="0"><div class="browser"><img src="images/onepost/comp.webp" alt="" width="1132" height="1754"><span class="mark" style="left:6%;top:12.5%;width:88%;height:56.5%"><em>25か所の順位</em></span></div></div>
+        <div class="screen wide" data-i="1"><div class="browser"><img src="images/onepost/reviews.webp" alt="" width="1000" height="789"><span class="mark" style="left:3%;top:66%;width:94%;height:30%"><em>返信の下書きを確認して投稿</em></span></div></div>
+        <div class="screen wide" data-i="2"><div class="browser"><img src="images/onepost/trend.webp" alt="" width="1812" height="678"><span class="mark" style="left:5%;top:30%;width:93%;height:26%"><em>自店と競合店の順位の推移</em></span></div></div>
+        <div class="screen wide" data-i="3"><div class="browser"><img src="images/onepost/report.webp" alt="" width="1756" height="574"><span class="mark" style="left:2%;top:24%;width:96%;height:74%"><em>その月に行った作業</em></span></div></div>
       </div>
       <ol class="steps">
         <li class="step on" data-i="0">
-          <div class="inline-shot browser"><img src="images/onepost/post.webp" alt="投稿画面。メディアの選択欄と、Instagram・Facebook・Google BP・TikTok・Pinterest・YouTubeの投稿先ボタン" width="681" height="1294" loading="lazy"></div>
-          <small>投稿をつくる</small>
-          <h3>画像や動画を選び、投稿先をまとめて選ぶ</h3>
-          <p>メディアを入れて、投稿したいSNSを押して選びます。連携していないSNSは「未連携」と表示されます。SNSを切り替えて同じ内容を何度も入れる手間がなくなります。</p>
+          <div class="inline-shot browser"><img src="images/onepost/comp.webp" alt="Googleマップでの順位の画面。お店のまわり25か所の順位が色分けで並び、平均順位と3位以内に出た地点の数が表示されている（サンプル店舗）" width="1132" height="1754" loading="lazy"></div>
+          <small>計測する</small>
+          <h3>お店のまわり25か所で、週1回順位を測ります</h3>
+          <p>お客様が検索しそうな言葉で、お店のまわり25か所の順位を週1回計測します。競合店の順位も同じ地図で見られるので、どの地点で負けているかが分かります。</p>
         </li>
         <li class="step" data-i="1">
-          <div class="inline-shot browser"><img src="images/onepost/ai.webp" alt="AIキャプションの表示欄。「画像を選択してプラットフォームを選び、AIキャプションを生成を押してください」と案内が出ている" width="2181" height="810" loading="lazy"></div>
-          <small>文章を考える</small>
-          <h3>AIが投稿文の案をつくる</h3>
-          <p>画像と投稿先を選んで「AIキャプションを生成」を押すと、右側に文章案が出ます。投稿テーマやブランドプロフィールをもとに作られ、公開前に確認・編集できます。</p>
+          <div class="inline-shot browser"><img src="images/onepost/reviews.webp" alt="クチコミ返信の画面。お客様のクチコミの下に、返信の下書きと「この内容で返信する」ボタンがある（サンプル店舗）" width="1000" height="789" loading="lazy"></div>
+          <small>クチコミに返信する</small>
+          <h3>新しいクチコミに、きちんと返信します</h3>
+          <p>AIが返信の下書きを作り、TK-creativeが内容を確認してから投稿します。返信が止まっているお店でも、毎月きちんと返せます。</p>
         </li>
         <li class="step" data-i="2">
-          <div class="inline-shot browser"><img src="images/onepost/cal.webp" alt="予約投稿一覧のカレンダー（2026年10月）" width="681" height="1418" loading="lazy"></div>
-          <small>予約する</small>
-          <h3>日時を決めて予約し、カレンダーで確かめる</h3>
-          <p>日時を指定して予約すると、予約一覧とカレンダーに並びます。投稿開始前なら、日時・投稿先・本文・メディアを編集したり取り消したりできます。</p>
+          <div class="inline-shot browser"><img src="images/onepost/trend.webp" alt="平均順位の推移のグラフ。自店と競合店の線が並ぶ（サンプル店舗）" width="1812" height="678" loading="lazy"></div>
+          <small>投稿と改善</small>
+          <h3>月2回の投稿と、順位を見た改善</h3>
+          <p>共有いただいた写真などをもとに、新しいメニューやお知らせをGoogleビジネスプロフィールに月2回投稿します。順位の推移と競合店との比較を見て、説明文・写真・メニューなども見直します。</p>
         </li>
         <li class="step" data-i="3">
-          <div class="inline-shot browser"><img src="images/onepost/sns.webp" alt="SNS連携管理の画面。SNSごとに「連携する」「再連携」「解除」のボタンがある" width="880" height="1145" loading="lazy"></div>
-          <small>最初に一度だけ</small>
-          <h3>使うSNSをつなぐ</h3>
-          <p>SNSごとに「連携する」を押してつなぎます。連携の期限が切れたときは「再連携」でつなぎ直せます。まずは普段使っているSNSを1つつなげば始められます。</p>
+          <div class="inline-shot browser"><img src="images/onepost/report.webp" alt="月次報告書の「ONEPOSTで行った作業」。クチコミへの返信、説明文とメニューの更新、投稿2回の内容が日付つきで並ぶ（サンプル店舗）" width="1756" height="574" loading="lazy"></div>
+          <small>報告する</small>
+          <h3>やったことは、月次報告書に残します</h3>
+          <p>毎月の報告書に、順位やクチコミの変化とあわせて、その月に行った作業と理由を書いてお届けします。</p>
         </li>
       </ol>
     </div>
@@ -337,10 +335,11 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:28px 0;font-siz
 <section class="end">
   <div class="wrap">
     <p class="logo-op">ONE<span>POST</span></p>
-    <p>おまかせプランとSNS一括投稿の料金と条件、オプション（AI自動下書き／LINEサポート）、よくある質問、お申し込みは、ONEPOST公式サイトにまとめています。</p>
+    <p>おまかせプランの内容・料金・よくある質問・お申し込みの流れは、ONEPOST公式サイトにまとめています。</p>
     <div class="actions">
       <a class="btn btn-red" href="https://oneposts.club/" target="_blank" rel="noopener">くわしくはONEPOST公式サイトへ</a>
     </div>
+    <p class="end-sub">自分で投稿したい方向けの別サービスとして、SNS一括投稿ツール<span style="white-space:nowrap">（月額2,980円・税込）</span>もあります。おまかせプランには含まれません。</p>
   </div>
 </section>
 </main>
